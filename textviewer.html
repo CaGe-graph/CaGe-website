@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>CaGe -- the text viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666" onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1><font face="Verdana, Arial, Helvetica, sans-serif" size="4" color="#FFFFFF">The 
+        Text Viewer</font></h1>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Our text 
+        viewer is fairly simple: it shows all data about a graph in plain text 
+        format. The data is arranged in a way that is similar to the &quot;writegraph&quot; 
+        format used by some of our generators.</font></p>
+    </td>
+    <td rowspan="4"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        Each vertex takes up one line in the text viewer. Whithin that line, the 
+        first column shows the vertex number, starting with one. In the next columns 
+        you can find all vertex coordinates. There are 2, 3 or 5 coordinate columns, 
+        depending on whether you have requested 2D or 3D embeddings or both. The 
+        rest of the line shows, under the &quot;adj&quot; heading, the numbers 
+        of all vertices adjacent to the current one (i.e. linked to it by an edge).</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">As stated 
+        before, there are two checkboxes for the text viewer in the <a href="output.html#viewer_output">output 
+        options window</a>, one in the 2D section and one for 3D, but there will 
+        be just one text viewer window that will show all coordinates computed 
+        for the displayed graph.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/textviewer.jpg" target="_blank" onClick="return imageWindow (this, 674, 664, 'the text viewer');"><img height="99" width="100" src="Images/textviewer-small.gif" border="0" alt="the text viewer"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="results.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Viewing 
+            results<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="results"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="download.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="download"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Download</b></font></a></font></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="twoview.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b>TwoView, 
+            the 2D viewer<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="twoview"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="rasmol.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="rasmol"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Rasmol, 
+            another 3D viewer</b></font></a></font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "results/textviewer";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

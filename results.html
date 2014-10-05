@@ -1,0 +1,263 @@
+<html>
+<head>
+<title>CaGe -- Viewing Results</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666" onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1><font face="Verdana, Arial, Helvetica, sans-serif" size="4" color="#FFFFFF">Viewing 
+        Results</font></h1>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">This page 
+        explains how you can control processes that use viewer output. The viewers 
+        themselves open in separate windows and are documented on separate pages 
+        (find links <a href="#viewers">at the bottom</a>). Processes with file 
+        output are much simpler and are explained on a <a href="background.html">separate 
+        page</a>.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We consider 
+        most generated graph sets too large for complete user inspection. You 
+        can picture the production process as a sequence of embedded graphs &quot;flowing&quot; 
+        past you. You stop this flow at certain points and CaGe will show you 
+        the current graph in all the viewers you have requested. Initially, CaGe 
+        is set to stop the &quot;flow&quot; at the first graph.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Let's use 
+        the set of C<font size="-2"><sub>60</sub></font> fullerenes -- numbering 
+        1812 and introduced on the <a href="fullerenes.html">fullerenes page</a> 
+        -- as an example. We assume that you have started CaGe, chosen the fullerenes 
+        generator, kept the fullerenes options window in its original state (min 
+        = max = 60 C atoms, no other option selected), and clicked &quot;Next&quot;. 
+        In the output options window, you have requested 2D and 3D embedding, 
+        selected some viewers, and again clicked &quot;Next&quot;.</font></p>
+    </td>
+    <td rowspan="9"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        </font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CaGe 
+        is now showing the window seen on the right, the <b>results window</b>. 
+        And CaGe has started the production process and is waiting for a graph 
+        to come in. Our fullerenes generator takes a short time for initialization 
+        and then writes out the first graph. CaGe reads the graph, sets the top 
+        number in the results window (labelled &quot;generated&quot;) to one and 
+        hands the graph over to two embedder processes, one each for calculating 
+        2D and 3D coordinates. After the embeddings have been returned, CaGe increases 
+        the second number (labelled &quot;view/goto&quot;) to one and passes the 
+        graph to all selected viewers. Our first screenshot shows the results 
+        window at this time.</font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+        The number labelled &quot;view/goto&quot; is the number of the <b>current 
+        graph</b>, the graph shown in all viewer windows. It is also shown between 
+        the two arrow buttons, labelled &quot;review&quot;, in the bottom third 
+        of the results window.</font></p>
+      <h2><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Saving the 
+        current graph</font></h2>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The four 
+        &quot;save&quot; buttons below the &quot;view/goto&quot; number can be 
+        used to store the current graph in various ways. The first three, &quot;adj&quot;, 
+        &quot;2D&quot;, and &quot;3D&quot;, save the graph as it is, but with 
+        different embeddings. The formats available are the same that you can 
+        use when selecting <a href="output.html#file_output">file output</a> in 
+        the output options window (creating a background task). The idea behind 
+        these buttons is that you can save your own collection of &quot;interesting&quot; 
+        graphs, taken from some complete result set. Therefore, you are only once 
+        asked for a <a href="output.html#destinations">destination</a> and format 
+        to use for &quot;adj&quot;, &quot;2D&quot;, and &quot;3D&quot; output. 
+        After these have been supplied and confirmed by clicking &quot;Ok&quot; 
+        in the save dialogue (not shown), you simply press these buttons once 
+        for each graph you wish to save. After a graph has been saved, the respective 
+        save button will be disabled so you can't save it again. You can save 
+        graphs in an order different from that produced by the generator by using 
+        the &quot;review&quot; buttons to go back to a previous, unsaved graph 
+        (see below).</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">You don't 
+        always see all save buttons. &quot;adj&quot; is always there, &quot;2D&quot; 
+        and &quot;3D&quot; are only shown if you have requested the respective 
+        embedding in the output options window. The folding net function (see 
+        next paragraph) is only available if 3D embedding has been chosen.</font></p>
+      <h2><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a name="folding_nets"></a>Saving 
+        a folding net for the current graph</font></h2>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">A folding 
+        net is a 2D drawing of a graph's 3D embedding. It is produced by taking 
+        the 3D-embedded graph as produced by CaGe, cutting it open along a suitably 
+        chosen subset of edges, and rotating the faces around some uncut edge 
+        so that all faces finally come to rest on a common 2D plane. (Some faces 
+        may have to be straightened as well.) The idea is that you can print the 
+        resulting drawing on paper, cut it out and fold it back together, building 
+        a 3D model of the graph or molecule. Choosing the exact way to cut open 
+        and unfold the faces is a complicated process, and this is performed by 
+        a separate program that CaGe runs in the background, the <b>folding net 
+        converter</b>. If you use the &quot;folding net&quot; button, CaGe adds 
+        your request to a queue of folding net tasks. This queue is processed 
+        in the background, progress is shown in the background tasks window (<a href="#background_tasks">see 
+        below</a>).</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The &quot;folding 
+        net&quot; button always asks for a <a href="output.html#destinations">destination</a> 
+        to save to, unlike the other save buttons. It never asks for a format, 
+        though: the folding net converter writes its output in PostScript.</font></p>
+      <h2><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Advancing 
+        and reviewing</font></h2>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We have mentioned 
+        that CaGe adopts a &quot;flow&quot; model for handling the generated graph 
+        sequence. That flow is automatically stopped at the first graph, and it 
+        is then up to you to move forward. The controls next to the &quot;advance&quot; 
+        label serve this purpose. The &quot;+1&quot; and &quot;+10&quot; buttons 
+        shown in our screenshots do just what they imply. &quot;+10&quot; is just 
+        a default, though, you can change this button to any fixed distance greater 
+        than one by changing the value in the field to the left of the button. 
+        We will refer to this button as &quot;+<i>d</i>&quot; instead of &quot;+10&quot; 
+        from now on.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/results1.jpg" target="_blank" onClick="return imageWindow (this, 550, 500, 'results window -- first graph');"><img height="82" width="100" src="Images/results1-small.gif" border="0" alt="results window -- first graph"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a name="reviewing"></a><br>
+        Press the &quot;+1&quot; button three times to advance from graph number 
+        1 to number 4. At this point, you may want to compare the fourth graph 
+        with one of the earlier ones. You can look back at graphs you have previously 
+        stopped at using the two arrow buttons next to the &quot;<b>review</b>&quot; 
+        label. Our second screenshot shows the results window after advancing 
+        to graph 4 as described above, and pressing the backward review button 
+        twice to look back at graph 2.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a name="goto"></a>Besides 
+        moving forward by some given distance, you can also set the target number 
+        to move to. Just enter that number in the &quot;view/goto&quot; field. 
+        This can be the number of a graph previously stopped at, eliminating the 
+        need to click the forward or backward review buttons repeatedly. As a 
+        special shortcut, 0 (zero) can be entered to move to the last graph in 
+        the review list. You can also enter a number larger than the number of 
+        currently generated graphs, causing CaGe to advance to that number (as 
+        long as the generator will actually produce this many graphs, otherwise 
+        CaGe will stop advancing when the sequence ends). And finally, you can 
+        redisplay the current graph: click into the &quot;view/goto&quot; field 
+        in the <a href="results.html#goto">results window</a>, don't change the 
+        number, and press Return.</font></p>
+      <h2><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Flowing 
+        vs. Advancing</font></h2>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We say that 
+        CaGe is &quot;flowing&quot; whenever it is reading graphs from the generator, 
+        e.g. when you are asking CaGe to advance to some graph number either by 
+        entering the number in the &quot;view/goto&quot; field or by using the 
+        &quot;+1&quot; and &quot;+<i>d</i>&quot; buttons. There is a button in 
+        the &quot;advance&quot; section titled &quot;flow&quot;, and CaGe presses 
+        and releases this button automatically to reflect its flowing state. While 
+        CaGe is flowing, you can't advance: the &quot;+1&quot; and &quot;+<i>d</i>&quot; 
+        buttons are disabled, and entering a number in &quot;view/goto&quot; beyond 
+        the highest graph number in the review list will not be accepted.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/results2.jpg" target="_blank" onClick="return imageWindow (this, 550, 500, 'results window -- reviewing');"><img height="82" width="100" src="Images/results2-small.gif" border="0" alt="results window -- reviewing"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+        <font face="Verdana, Arial, Helvetica, sans-serif" size="2">You can operate 
+        the &quot;flow&quot; button, too. If CaGe is not flowing, press &quot;flow&quot; 
+        to move the generation process forward indefinitely. CaGe will read graphs 
+        and increase the &quot;generated&quot; number, but never stop by itself 
+        unless the generation ends.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Whenever 
+        CaGe is flowing -- whether you have pressed &quot;flow&quot; or asked 
+        CaGe to advance to a particular graph number -- you can release &quot;flow&quot; 
+        and CaGe will immediately embed and then display the latest graph it has 
+        finished reading from the generator. If no such graph has been produced 
+        since the flow was last stopped (or none at all yet), flowing will stop 
+        and you can operate the +1, +<i>d</i>, or &quot;flow&quot; buttons to 
+        tell CaGe what graph to advance to next, or to start flowing indefinitely.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The two screenshots 
+        on the right show the results window after &quot;flow&quot; has been pressed 
+        and CaGe left flowing for a short while, and then after &quot;flow&quot; 
+        has been released a moment later. CaGe stops at the next possible graph 
+        number, 936 in this example, adds it to the end of the review list and 
+        displays the graph. All intermittent graphs (between 4 and 936) are lost.</font></p>
+      <h2><font face="Verdana, Arial, Helvetica, sans-serif" size="2">End of a 
+        generation </font></h2>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/results3.jpg" target="_blank" onClick="return imageWindow (this, 550, 500, 'results window -- flowing');"><img height="82" width="100" src="Images/results3-small.gif" border="0" alt="results window -- flowing"></a><br>
+      <br>
+      <a href="Images/results4.jpg" target="_blank" onClick="return imageWindow (this, 550, 500, 'results window -- flow halted');"><img height="82" width="100" src="Images/results4-small.gif" border="0" alt="results window -- flow halted"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">When the 
+        generation process ends, CaGe will notice it is reading the last graph 
+        (an end-of-file condition is found while reading the generator output). 
+        Flowing then stops, the graph is added to the review list and displayed. 
+        A message appears in the status area together with a button, named &quot;log 
+        file&quot;, that will display everything the generator pipeline has written 
+        to the standard error stream. For some generators, this can include some 
+        statistics on the result set.</font></p>
+      <h2><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Stopping 
+        and Restarting</font></h2>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The generation 
+        process is also controlled by the buttons at the bottom of the results 
+        window. All three stop the generator even if CaGe appears to be &quot;hanging&quot; 
+        while waiting to read a graph, and they close all viewers. The &quot;Stop&quot; 
+        button, named &quot;Restart&quot; in the last screenshot, does just that. 
+        With it you can run a generation process with the options you specified 
+        several times. &quot;Cancel&quot; stops and returns you to the <a href="generators.html">generator 
+        selection</a> window. &quot;Exit&quot; stops and ends CaGe unless any 
+        background tasks are still active.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/results5.jpg" target="_blank" onClick="return imageWindow (this, 550, 500, 'results window -- finished');"><img height="82" width="100" src="Images/results5-small.gif" border="0" alt="results window -- finished"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        The folding net converter mentioned <a href="#folding_nets">above</a> 
+        was written by Alexander Lust.</font></p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="output.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Output 
+            Options<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="output"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+          <td nowrap width="100%" align="center"><a name="viewers"></a><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="jmol.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="jmol"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Jmol, 
+            a 3D viewer</b></font></a><br>
+            <a href="twoview.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="twoview"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">TwoView, 
+            the 2D viewer</b></font></a><br>
+            <a href="textviewer.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="textviewer"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            text viewer</b></font></a><br>
+            <a href="rasmol.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="rasmol"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Rasmol, 
+            another 3D viewer</b></font></a><br>
+            <a href="background.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="background"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Background 
+            Tasks </b></font></a></font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

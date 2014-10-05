@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>CaGe -- the Tubetypes generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <a name="tubes"></a>
+      <h1>Tubes and cones</h1>
+      <h2>The nanotube cap window</h2>
+    </td>
+    <td rowspan="5"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p> Nanotubes are a special  kind of <a href="fullerenes.html">fullerenes</a>.
+Though topologically spherical, the geometric form is a very long tube consisting
+only of hexagons and capped on both sides with &quot;patches&quot; containing 
+6 pentagons each and a varying number of hexagons. Because the tube body is very long compared
+to the cap, nanotubes are often considered to be caps with a one-side infinite tube
+body - or mathematically speaking: cubic plane graphs with 6 pentagons and all the rest hexagons.
+In this window these one-side infinite nanotubes are considered. Realizing the graphs geometrically,
+the 6 pentagons bend the surface so that the hexagons form a tube with constant diameter.
+
+The boundary between the tube body and the caps can be chosen in a way that cutting
+along this boundary the caps become <a href="hydrocarbons.html#hydrocarbondef">hydrocarbons</a> 
+in the sense of <a href="hydrocarbons.html#hydrocarbondef">the hydrocarbon windows</a> with
+a <a href="hydrocarbons.html#boundary">boundary sequence</a> of the form 
+(23)<sup><i>l</i></sup>(32)<sup><i>m</i></sup>. These parameters l,m are characteristic for the
+nanotube and we require a cap to have a boundary of this form with a pentagon adjacent to it. 
+
+</p>
+
+ <p>
+In this window you can give the parameters l,m. Then all caps for these parameters are generated
+that would lead to non-isomorphic one-side infinite nanotubes. Note that caps that are non-isomorphic
+as hydrocarbons can still lead to isomorphic nanotubes if they are attached to a one-side infinite tube.
+ </p>
+ <p>
+The generation can be restricted to <a href="trireg.html#IPR">IPR</a>-structures and a number of rings
+representing the beginning tube can be attached to the cap .
+ </p>
+
+ <p>
+
+Some more links can be found <a href="tube_detail.html">here</a>.
+
+ </p>
+    </td>
+
+    <td><br>
+      <a href="Images/nanotube.png" target="_blank" onClick="return imageWindow (this, 637, 676, 'A nanotube');"><img height="268" width="300" src="Images/nanotube_small.png" border="0" alt="A nanotube"></a></td>
+
+  </tr>
+
+ 
+
+  <tr valign="top"> 
+    <td><br>
+      <h2>The nanocones window</h2>
+    </td>
+    <td rowspan="1"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p>
+In case of an infinite 3-regular graph with 1 &le; <i>p</i> &le; 5 pentagons (and the rest hexagons) the
+pentagons bend the structure not enough to form a tube -- the structure becomes a cone.</p>
+
+	  <p>Similar to nanotubes also nanocones can be classified by
+	  a certain boundary structure. If 1 &le; <i>p</i> &le; 5 is
+	  the number of pentagons and we set <i>s</i>= 6-<i>p</i> then
+	  for <i>p</i> &isin; {1,5} one can always find a closed cycle
+neighbouring a pentagon
+	  so that the inner part has a boundary structure of
+	  ((23)<sup><i>k</i></sup>2)<sup><i>s</i></sup> for some
+	  <i>k</i>. We call this a symmetric boundary.
+For <i>p</i> &isin; {2,3,4} the boundary structure
+	  is either symmetric or of the form 
+	  ((23)<sup><i>k</i></sup>2)<sup><i>s-1</i></sup>(23)<sup>k-1</sup>2
+which we call almost symmetric.  </p>
+
+	  <p>In this part one first chooses whether one wants a
+	  symmetric or an unsymmetric (almost symmetric) boundary. Then one chooses the
+	  number <i>p</i> of pentagons in the cone and the length of
+	  the longest side -- which is the parameter <i>k</i> in the
+	  description of the boundary above.</p>
+
+	  <p>The generator generates all non-isomorphic caps with the
+	  given boundary structure. Different from nanotubes,
+	  different caps can not lead to the same cone, so there is a
+	  one-one correspondence between these caps and nanocones with
+	  caps for these parameters.</p>
+
+	  <p>Options are:</p>
+	  <ul>
+		<li>generate only caps representing <a href="trireg.html#IPR">IPR</a> nanocones</li>
+		<li>add a given number of hexagon rings to the generated caps</li>
+	  </ul>
+    </td>
+    <td><br>
+      <a href="Images/cone.png" target="_blank" onClick="return imageWindow (this, 550, 515, 'The cap of a nanocone');"><img height="268" width="300" src="Images/cone_small.png" border="0" alt="The cap of a nanocone"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="hydrocarbons.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            hydrocarbons windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="hydrocarbons"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="triangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="triangulations"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the triangulations windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif" alt=""></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/tubetypes";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

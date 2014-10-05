@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="rasmol.html"><strong>Rasmol</strong></a>
+Next : <a href="internal.html"><strong>Internal constants</strong></a>
+<h1 align=center> CaGe V0.3
+<HR></h1>
+
+<h3>Codes</h3>
+
+In this section the codes which are read and written by CaGe are 
+described. For a detailed description and an introduction to other codes
+see the original manual of <strong>gconv</strong>.
+<dir>
+<li><strong>writegraph2d</strong>: 
+  This is a Combinatorica format. It is ASCII, so it can be read by loading
+  the related file into an editor.
+  The file begins with one of the following headers:
+<center>
+   <strong>>>writegraph2d<<</strong><br>
+
+   <strong>>>writegraph2d planar<<</strong>
+</center>
+Then the graph information follows. For each graph the information
+ is given as follows: Vertices are numbered 1,...,n.
+  For each vertex x there is one line in the file. The first number in the 
+  line is the vertex number x to which the following numbers are related, 
+  then two float coordinates follow. They contain the
+  position of vertex x in the plane. After that, 
+  the numbers of those vertices
+  which are adjacent to vertex x follow (the neighbours of x). 
+  After the last vertex there is a line that contains only a zero. Then the
+  next graph follows. So more than one graph can be stored in one file.
+
+If the order in which the vertex neighbours are listed indicates
+    a planar embedding, then the header contains the parameter <strong>planar</strong> 
+    right after the code name. If the header does not contain the parameter
+<strong>planar</strong>, this does not automatically mean that the codes are no planar
+    embeddings.
+<br><br>
+
+
+  Here is an example file (containing the two fullerenes with 28 vertices):
+<br>
+>>writegraph2d planar<<
+<br><br>
+1 500 866.025 12 13 2<br>
+2 1000 0 1 3 23<br>
+3 500 -866.025 2 20 4<br>
+4 327.062 -561.364 3 5 24<br>
+5 18.681 -505.199 4 19 6<br>
+6 108.393 -344.286 5 7 25<br>
+7 -88.795 -157.214 6 17 8<br>
+8 5.716 2.986 7 9 26<br>
+9 -89.192 165.809 8 16 10<br>
+10 102.363 346.616 9 11 27<br>
+11 19.263 511.485 10 14 12<br>
+12 327.451 561.554 11 1 28<br>
+13 -500 866.025 1 14 21<br>
+14 -305.74 552.598 13 11 15<br>
+15 -447.152 241.398 14 16 22<br>
+16 -344.259 88.378 15 9 17<br>
+17 -342.855 -75.43 16 7 18<br>
+18 -443.29 -234.616 17 19 22<br>
+19 -308.899 -538.802 18 5 20<br>
+20 -500 -866.025 19 3 21<br>
+21 -1000 0 20 13 22<br>
+22 -644.641 5.733 21 15 18<br>
+23 634.271 -6.36 2 24 28<br>
+24 436.421 -267.701 23 4 25<br>
+25 255.983 -261.512 24 6 26<br>
+26 189.348 4.006 25 8 27<br>
+27 258.3 261.219 26 10 28<br>
+28 430.465 273.377 27 12 23<br>
+0<br>
+<br>
+1 500 866.025 12 13 2<br>
+2 1000 0 1 3 21<br>
+3 500 -866.025 2 19 4<br>
+4 321.919 -581.442 3 5 22<br>
+5 3.725 -536.829 4 18 6<br>
+6 19.874 -385.553 5 7 23<br>
+7 -260.627 -228.273 6 17 8<br>
+8 -141.191 41.533 7 9 25<br>
+9 -285.077 262.325 8 15 10<br>
+10 -42.105 428.45 9 11 26<br>
+11 -29.18 564.25 10 14 12<br>
+12 271.706 615.179 11 1 27<br>
+13 -500 866.025 1 14 20<br>
+14 -334.507 573.974 13 11 15<br>
+15 -447.472 277.783 14 9 16<br>
+16 -636.953 0.808 15 17 20<br>
+17 -432.968 -266.301 16 7 18<br>
+18 -314.325 -567.202 17 5 19<br>
+19 -500 -866.025 18 3 20<br>
+20 -1000 0 19 13 16<br>
+21 662.252 -73.473 2 22 28<br>
+22 458.915 -309.832 21 4 23<br>
+23 315.913 -254.598 22 6 24<br>
+24 355.774 24.301 23 25 28<br>
+25 122.788 118.125 24 8 26<br>
+26 197.526 323.948 25 10 27<br>
+27 336.98 354.08 26 12 28<br>
+28 467.657 117.43 27 21 24<br>
+0<br>
+<br>
+If a graph is not embedded before storing it, then all coordinates are zero.
+<li><strong>writegraph3d</strong>:  See <strong>writegraph2d</strong>, 
+  but with three coordinates for each vertex and with the appropriate code
+  name inside the header (<strong>writegraph3d</strong>). 
+<li><strong>planar_code</strong>: 
+   This code is binary and so it cannot be read on a screen.  It does not
+   provide coordinates, so the adjacency information of graphs is all what
+   can be stored using this code. 
+   The file begins with a header which is one of the following:   
+<center>
+   <strong>>>planar_code<<</strong>
+<br>  
+   <strong>>>planar_code le<<</strong>
+<br>  
+   <strong>>>planar_code be<<</strong>
+</center>
+   Here "le/be" stands for "little endian"/"big endian" (this will not be
+   discussed here). After the header, for each graph the following information
+   is given: First the number
+   of vertices of the graph appears. Vertices are numbered 1,...,n. Let's
+   assume that we have already embedded the graph into the plane. First 
+   the neighbours of vertex 1 are listed in clockwise direction, followed by a
+   zero. Then the same continues with vertex 2,3,...,n. After the last zero,
+   the next graph follows.
+   
+   The above example file would look like this 
+   (where the numbers are <strong>binary</strong>, not readable, and the commas are
+   meta symbols which are not contained in the file):<br><br>
+ >>planar_code<< 28, 12 13 2 0,
+1 3 23 0, 
+2 20 4 0, 
+3 5 24 0, 
+4 19 6 0, 
+5 7 25 0, 
+6 17 8 0, 
+7 9 26 0, 
+8 16 10 0,  
+9 11 27 0, 
+10 14 12 0, 
+11 1 28 0, 
+1 14 21 0, 
+13 11 15 0, 
+14 16 22 0, 
+15 9 17 0, 
+16 7 18 0, 
+17 19 22 0, 
+18 5 20 0, 
+19 3 21 0, 
+20 13 22 0, 
+21 15 18 0, 
+2 24 28 0, 
+23 4 25 0, 
+24 6 26 0, 
+25 8 27 0, 
+26 10 28 0, 
+27 12 23 0, 
+28, 
+12 13 2 0, 
+1 3 21 0, 
+2 19 4 0, 
+3 5 22 0, 
+4 18 6 0, 
+5 7 23 0, 
+6 17 8 0, 
+7 9 25 0, 
+8 15 10 0, 
+9 11 26 0, 
+10 14 12 0, 
+11 1 27 0, 
+1 14 20 0, 
+13 11 15 0, 
+14 9 16 0, 
+15 17 20 0, 
+16 7 18 0, 
+17 5 19 0, 
+18 3 20 0, 
+19 13 16 0, 
+2 22 28 0, 
+21 4 23 0, 
+22 6 24 0, 
+23 25 28 0, 
+24 8 26 0, 
+25 10 27 0, 
+26 12 28 0, 
+27 21 24 0<br>
+<br>
+Normally the code entries are of type <strong>unsigned char</strong> (1--byte size, 
+i.e. numbers between 0 and 255). But if the
+number of vertices for one graph is higher than 252, then the code for this 
+graph begins with a zero (unsigned char) and then each following entry is of
+the type <strong>unsigned short</strong> (2 bytes). In this case it makes a difference 
+whether the entry is stored in little endian or big endian style (the endian 
+determines whether a number like 19 is stored by storing the 1 or the 9 first).
+The output style that is produced <strong>always</strong> depends on the definition
+of the 
+internal constant ENDIAN_OUT (see section
+<a href="internal.html"><strong  >constans
+</font></strong></a>. 
+) which value
+is usually
+consistent to the endian of the computer. The input style that is assumed 
+depends
+on the definition of the constant ENDIAN_IN. But if the input file begins with
+a header that contains a "be" or "le"--parameter, then the input style is
+big endian or little endian, respectively. If the file contains no graphs with
+more than 252 vertices, then it is not important if the style is little endian
+or big endian.
+</dir>
+</body>
+</html>

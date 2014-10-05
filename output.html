@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>CaGe -- Output Options</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>Output Options</h1>
+      <p>After choosing 
+        a generator and setting all its options, the final step is to tell CaGe 
+        which kind(s) of embeddings you want (2D and/or 3D) and whether you want 
+        to visually inspect results or run a background task to store the complete 
+        result set in a file.</p>
+    </td>
+    <td rowspan="6"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+        In the Output Options window
+        many controls are actually inivisible until you make choices that 
+        reveal them. All you see initially are the  <b>prefilter checkbox</b>,
+	the <b>dimension checkboxes</b> 
+        (labelled &quot;3D/2D representation&quot;) and, for both dimensions, 
+        the <b>output mode radio buttons</b>, named &quot;Viewer&quot; and &quot;File/Pipe&quot;. 
+        We could have hidden these radio buttons as well, but they offer a shortcut: 
+        Click either &quot;Viewer&quot; or &quot;File/Pipe&quot; for any dimension, 
+        and the respective dimension checkbox will be selected automatically, 
+        saving one click.</p>
+      <p>The topmost 
+        checkbox, &quot;Pre-filter Graphs&quot;, will activate a text input when 
+        clicked. You are expected to enter a command here, and this command will 
+        be connected to the generator's output using a pipe. 
+        The command will therefore be able to read graphs on standard input as 
+        they come from the generator (which generally will be non-embedded graphs), 
+        and CaGe will expect to read some graphs, in one of the <a href="technical.html#formats">formats</a> 
+        supported by CaGe, from the filter command's standard output. (Your command 
+        can itself be a &quot;pipeline&quot; -- see <a href="#pipeline">below</a> 
+        for more details.)</p>
+    </td>
+    <td><br>
+      <a href="Images/output.png" target="_blank" onClick="return imageWindow (this, 723, 495, 'output options -- initial state');"><img height="272" width="400" src="Images/output_small.png" border="0" alt="output options -- initial state"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <h2><br><a name="viewer_output"></a>Viewer output</h2>
+      <p>Our second 
+        screenshot shows the Output Options window after the two &quot;Viewer&quot; 
+        radio buttons for 2D and 3D have been clicked. Just below each of these 
+        radio buttons, a row of <b>viewer checkboxes</b> has appeared. Select 
+        any number of these checkboxes to choose one or more viewers for each 
+        dimension. CaGe will not let you deselect all viewer checkboxes, you have 
+        to uncheck the respective dimension checkbox instead. If one viewer is 
+        selected and you want to switch to another, you would have to select that 
+        other viewer first and then deselect the current one, an unintuitive clicking 
+        sequence for many users. But there is a shortcut: You can <i>shift-click</i> 
+        a viewer to select it &quot;exclusively&quot;, deselecting all other viewers.</p>
+      <p>The &quot;text 
+        viewer&quot; shows all coordinates (2D and 3D) that you have chosen to 
+        produce, in one window. Therefore, the &quot;text viewer&quot; checkboxes 
+        shown in the 3D and 2D areas refer to the same viewer window. Deselecting 
+        the &quot;text viewer&quot; checkbox in one dimension will also deselect 
+        it in the other. If the text viewer has been the only selected viewer 
+        in that other dimension (it won't be in the dimension where CaGe has let 
+        you deselect it), CaGe will deselect that other dimension altogether.</p>
+    </td>
+    <td><br><a href="Images/output2.png" target="_blank" onClick="return imageWindow (this, 723, 495, 'viewer output options');"><img height="272" width="400" src="Images/output2_small.png" border="0" alt="viewer output options"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <h2><br><a name="file_output"></a>File output</h2>
+      <p>In the third 
+        screenshot you see all the controls that appear, in place of the viewer 
+        checkboxes, if you select the &quot;File/Pipe&quot; checkboxes and/or 
+        the &quot;Adjacency information&quot; checkbox (which you might call the 
+        zero dimension checkbox -- there is no zero-D viewer and therefore no 
+        choice of viewer vs. file output for &quot;adjacency&quot;). Whereever 
+        you choose file or pipe output, you are asked for the <a href="#destinations">destination</a> 
+        and the format to use. For each generated graph, CaGe will create any 
+        requested embeddings and write the embedded graph to the given destinations 
+        in the selected formats. In the screenshot, the format box for 3D has 
+        been clicked on to reveal the available 3D formats. CaGe actually uses 
+        just a small <a href="technical.html#PDB_CML">subset</a> of both the PDB 
+        and CML languages.</p>
+      <h2><a name="destinations"></a>Where your data is saved</h2>
+      <p>You supply 
+        all save destinations via a text field. Normally this will be interpreted 
+        as a filename, relative to the directory in which the generation process 
+        is run (see <b><font face="Courier New, Courier, mono">CaGe.Generators.RunDir</font></b> 
+        in the configuration file <font face="Courier New, Courier, mono">CaGe.ini</font>). 
+        If you start the destination with the '|' character, it will be interpreted 
+        as a pipeline. CaGe will start this pipeline and write to its standard 
+        input.</p>
+      <p><a name="pipeline"></a>A 
+        <b>pipeline</b> is a sequence of commands, separated by '|' characters, 
+        with each command's standard output connected to the next command's standard 
+        input --, but no other shell interpretation will be performed unless you 
+        call the shell as part of the command. All pipelines are also run in the 
+        directory given by <b><font face="Courier New, Courier, mono">CaGe.Generators.RunDir</font></b> 
+        in <font face="Courier New, Courier, mono">CaGe.ini</font>.</p>
+      <h2>Either viewer output or file output</h2>
+      <p>You can not 
+        select file output for some dimensions and viewer output for some others. 
+        CaGe will disable the &quot;Next&quot; button if you try. Remember that 
+        the &quot;zero&quot; dimension, adjacency information, only allows file 
+        output.</p>
+    </td>
+    <td><br>
+      <a href="Images/output3.png" target="_blank" onClick="return imageWindow (this, 723, 495, 'file output options');"><img height="272" width="400" src="Images/output3_small.png" border="0" alt="file output options"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding="0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">Choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="results.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="results"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Viewing 
+            Results</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

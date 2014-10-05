@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>CaGe -- Choosing a Generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>Choosing a generator</h1>
+      <p>CaGe's dialogue 
+        windows operate similar to the &quot;assistants&quot; or &quot;wizards&quot; 
+        that you might know from other programs mostly found in the Windows world. 
+        In other words, CaGe will show you a sequence of dialogues each asking 
+        for a particular set of options, and there are buttons named &quot;Next&quot; 
+        and &quot;Previous&quot; that you can use to move on to the next dialogue 
+        or to go back and review your settings. Whereever you see the &quot;Prev&iacute;ous&quot; 
+        and &quot;Next&quot; buttons, you can press them using the key combinations 
+        Alt+Left and Alt+Right (Left and Right being the arrow keys on your keyboard).</p>
+    </td>
+    <td rowspan="4"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+        The first window presented by CaGe is simple -- it asks you which of a 
+        number of predefined <b>generators</b> you want to use. Each of the generators 
+        installed with CaGe is dedicated to its own <b>graph class</b> or <b>molecule 
+        type</b>. If you would like to use a generator program not supplied with 
+        CaGe you can do so by choosing the <a href="external.html">external generator</a> 
+        button in CaGe's first window, and providing a command line with any option 
+        parameters there.</p>
+      <p>There is 
+        no &quot;Next&quot; button in the generator selection window, but each 
+        generator button is actually a &quot;Next&quot; button too, saving you 
+        one click. Keyboard users can select generators by pressing Alt+1, Alt+2
+	etc. for the generator buttons, numbered from top to bottom.</p>
+      <p>The generators 
+        we provide with CaGe are results of our team's mathematical research. 
+        They implement algorithms which generate certain classes of graphs completely 
+        and quickly -- so quickly that we don't store their results in files (which 
+        can become huge). If any post-processing or analysis is to be done later 
+        on a certain result set, we simply rerun the generator to generate the 
+        set again and pipe the generator's output into the post-processing or 
+        analyzing program. CaGe supports this process too. It is possible to provide 
+        a command line for an external program to receive a generator's output. 
+        If this external program produces analysis or logging output on standard 
+        error and passes on &quot;interesting&quot; or possibly modified graphs 
+        to standard output, CaGe can use and visualize your results. This external 
+        program can be specified in the &quot;filter&quot; text field of the <a href="output.html">output 
+        options</a> window.</p>
+      <p>The next 
+        pages describe the generators we have built into our distribution of CaGe. 
+        As mentioned before, you can use your own generators if you choose <a href="external.html">external 
+        generator</a> in the first window.</p>
+    </td>
+    <td><br>
+      <a href="Images/selecting.gif" target="_blank" onClick="return imageWindow (this, 413, 510, 'generator selection window');"><img height="113" width="100" src="Images/selecting-small.gif" border="0" alt="generator selection window"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="definitions.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">Definitions<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="definitions"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td nowrap>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap>&nbsp;</td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap>
+			<a href="trireg.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="trireg"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				3-regular Plane Graphs generators</a><br>
+			<a href="fourreg.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="fourreg"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				4-regular Plane Graphs generators</a><br>
+			<a href="hydrocarbons.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="hydrocarbons"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				Hydrocarbons generators</a><br>
+			<a href="tubetypes.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="tubetypes"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				Tubes and Cones generators</a><br>
+			<a href="triangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="triangulations"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				Triangulations generators</a><br>
+			<a href="quadrangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="quadrangulations"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				Quadrangulations generators</a><br>
+			<a href="polytopes.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="polytopes"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+				General Plane Graphs generator</a><br>
+		</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

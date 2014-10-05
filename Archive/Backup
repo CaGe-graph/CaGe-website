@@ -1,0 +1,4 @@
+
+ls -A | grep -v '^CaGe\.tar' |
+  tar cf - ` cat ` | gzip -9 > ~/cage/www.tar.gz
+

@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="graph_gen.html"><strong>Generation programs</strong></a>
+Next : <a href="codes.html"><strong>Codes</strong></a>
+
+<h1 align=center> CaGe V0.3
+<HR></h1>  
+<h3>RasMol</h3>
+<strong>RasMol</strong>
+is an external program which is very useful for displaying three--dimensional
+representations of graphs. 
+There are three way to use the various options of RasMol:
+<dir>
+<li><strong>RasMol Menu:</strong>
+<center><img src="Img/ras_com_button.gif"></center>
+<li><strong>RasMol defaults:</strong>
+At the bottom of the "Output panel"--window you can find the "RasMol defaults"--button.
+Pressing it opens the "RasMol Defaults"--window:<br><br>
+<center><img src="Img/ras_defaults.gif"></center>
+CaGe is able to store some default values for RasMol e.g background color.
+The values are stored<strong> for each generation program seperatly</strong> !
+Choose some values by the slides and the checkbuttons. Use the "Show"--button to
+send these values to RasMol. You can save the new default values or load the old
+values with the "Reset"--button.
+<br><br>
+<li><strong>Command Line Interface:</strong>You can use all
+options and commands of RasMol via the Command Line Interface.
+Let us look at one example.<br> 
+You select the HCgen generation program and choose 60 C-Atoms 10 H-Atoms
+and 5 Pentagons. In your xterm the following lines will appear : 
+<br><br>
+<code>
+bash$ cage<br>
+Welcome to CaGe V0.3<br>
+Please wait. In a few seconds the frame of the<br>
+main window will appear.<br>
+RasMol Molecular Renderer<br>
+Roger Sayle, August 1995<br>
+Version 2.6<br>
+[8bit version]<br>
+
+RasMol> rasmol<br>
+->HCgen 60 10 5 gap 4  stdout pid<br>
+ C: 60    H: 10    hexagons: 21    pentagons: 5  <br>
+ Randlaenge: 19    Innere Knoten: 41  <br>
+Bisher: 0 Strukturen <br>
+ aufgabe:<br>
+v:0 d:1    v:0 d:0    <br>
+Anfang konstruktion: C: 25 H: 7 <br>
+Bisher: 10 Strukturen <br>
+ aufgabe:<br>
+v:0 d:0   <br> 
+Anfang konstruktion: C: 41 H: 9 <br>
+83 Strukturen<br>
+<br>
+Total generation time: 0.2 seconds <br>
+</code>
+<br>
+Now you press "Return" and the Command Line Interface is active.
+This is indecated by:<br>
+<br>
+<code>
+RasMol> <br>
+</code><br>
+You can use the Command Line Interface every time after a new graph
+arrived. For more details see  <a href="http://www.umass.edu/microbio/rasmol/distrib/rasman.htm#go_interprocess">
+RasMol Manual</a> <br><br>
+<strong>Before:</strong>  
+<center><img src="Img/ras_ex_vorher.gif"></center>
+<strong>After:</strong>  <br><br>
+<code>
+RasMol> set hydrogen true  <br>  
+RasMol> select hydrogen<br>
+10 atoms selected!<br>
+RasMol> color [0,255,0]<br>
+RasMol> select not hydrogen  <br>
+60 atoms selected!<br>
+RasMol> color [0,0,255]<br>
+RasMol> </code><br><br>
+<center><img src="Img/ras_ex_nacher.gif"></center>
+<br>
+</dir>
+</body>
+</html>

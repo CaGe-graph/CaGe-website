@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>CaGe -- TwoView, the 2D viewer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666" onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1><font face="Verdana, Arial, Helvetica, sans-serif" size="4" color="#FFFFFF">TwoView, 
+        the 2D viewer</font></h1>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Our 2D viewer 
+        can show vertex numbers and has a &quot;re-embedding&quot; feature that 
+        effectively turns the 2D plane (upon which our graphs are embedded) into 
+        a closed surface (such as the surface of a sphere). TwoView is configured 
+        through the controls near the top of the window, with initial values coming 
+        from the configuration file <font face="Courier New, Courier, mono">CaGe.ini</font>.</font></p>
+    </td>
+    <td rowspan="5"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        This screenshot shows TwoView displaying the same graph we have seen in 
+        Jmol on the <a href="jmol.html">previous page</a>. TwoView offers buttons 
+        to select the size of the vertex symbols, a checkbox to decide whether 
+        vertex numbers should be shown, and a slider and a number field to control 
+        the appearance of the edges. Showing vertex numbers may increase the size 
+        of the vertex symbols, and using smaller vertex symbols may turn off the 
+        display of vertex numbers.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Re-embedding 
+        takes place when you click the mouse somewhere within an interior face 
+        of the graph. The 2D embedder is then called to compute a new 2D embedding 
+        in which the clicked face becomes the &quot;outside&quot; face. (There 
+        is a command line option that communicates the face clicked into to the 
+        embedder. CaGe calls the embedder with that option and writes the current 
+        state of the graph to the embedder's input. Some generators disable the 
+        re-embedding feature; in that case, TwoView won't react to mouse clicks 
+        within graph faces and the &quot;reset embedding&quot; button shown in 
+        these screenshots will be absent from the TwoView window.)</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/twoview1.jpg" target="_blank" onClick="return imageWindow (this, 650, 600, 'TwoView, the 2D viewer -- fullerene 1 with numbers');"><img height="94" width="100" src="Images/twoview1-small.gif" border="0" alt="TwoView, the 2D viewer -- fullerene 1 with numbers"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        The second screenshot shows TwoView after clicking the mouse within the 
+        face surrounded by vertices 56, 57, 58, 59, and 60, and adjusting the 
+        controls to use smaller vertex symbols without numbers. Without these 
+        adjustments it would have been difficult to see the edges around the smaller 
+        faces in the display.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">How can an 
+        interior face suddenly become the exterior one? Imagine you have drawn 
+        the original 2D graph onto the front half of some super-elastic balloon. 
+        Now punch a circular hole into the balloon surface, within one of the 
+        faces. Our balloon is elastic and not tightly filled up, so it won't explode. 
+        Imagine the immediate surroundings of the hole being like a ring-shaped 
+        rubber band. Take that ring into both hands, your fingers reaching through 
+        the hole into the inside of the balloon, and pull out the ring, expanding 
+        it into a large circle. The rest of the balloon material is of course 
+        still attached to the rubber ring and is pulled into a straight planar 
+        shape as the ring becomes very large. On the balloon material you will 
+        now find a 2D drawing of our graph with a new outside face. It will need 
+        some vertex repositioning, but it provides a start. The embedder does 
+        not actually work in this way, but using this model we hope to explain 
+        why there is nothing special about the outside face, and why we said in 
+        the beginning that we are considering our 2D plane a closed, spherical 
+        surface rather than a standard (Euclidean) plane.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Once you 
+        have re-embedded a graph in this way, the button titled &quot;reset embedding&quot; 
+        is enabled. Clicking it will reset the 2D embedding to its original state. 
+        If you don't use this button, the 2D embedding will be kept in its changed 
+        state, even if you move on to other graphs and later use the results window's 
+        &quot;<a href="results.html#reviewing">review</a>&quot; buttons to return 
+        to this one. This also affects the &quot;2D&quot; save button in the results 
+        window: it will save the 2D embedding that TwoView is showing, and if 
+        you do change the 2D embedding via TwoView you can actually 2D-save again 
+        (the 2D button in the results window will be enabled even if you have 
+        used it before).</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">TwoView itself 
+        has a save button as well: &quot;save PS&quot; button will write a PostScript 
+        representation of the graph as currently shown by TwoView, with all effects 
+        of TwoView's various control settings reproduced as closely as possible. 
+        A short dialogue asks you for the <a href="output.html#destinations">destination</a> 
+        and whether you want to include some headline for the graph.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/twoview2.jpg" target="_blank" onClick="return imageWindow (this, 650, 600, 'TwoView, the 2D viewer -- fullerene 1 re-embedded');"><img height="94" width="100" src="Images/twoview2-small.gif" border="0" alt="TwoView, the 2D viewer -- fullerene 1 re-embedded"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="results.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Viewing 
+            results<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="results"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="download.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="download"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Download</b></font></a></font></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="jmol.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b>Jmol, 
+            a 3D viewer<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="jmol"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="textviewer.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="textviewer"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            text viewer</b></font></a></font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "results/twoview";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

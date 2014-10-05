@@ -1,0 +1,148 @@
+
+                                   cage 
+                                  READ ME
+                              October 18, 1996
+                               Thomas Harmuth
+                     harmuth@mathematik.uni-bielefeld.de
+
+
+Getting started
+---------------
+To create the cage program, you need to have the following files in
+one directory:
+
+-  cage.c
+-  spring.c
+-  schlegel.c
+-  fullgen.c
+-  HCgen.c
+-  makefile
+
+
+The program is compiled by entering this directory and typing
+
+  make cage
+
+
+However, some include files and some libraries are needed which must be 
+installed somewhere on your computer. These are the files
+
+ tcl.h
+ tk.h
+ libX11.a
+ libtcl.so
+ libtk.so
+
+If these files are not stored in the default directories for include
+files and libraries (normally "/usr/include" and "/usr/lib"), then you
+must provide the paths to the directories in which the files can be found.
+This is done in the makefile.
+In the current version of the makefile, two examples are given:
+
+# for SGI:
+TCLINCLUDE = /vol/local/include
+TCLLIB     = /vol/local/lib
+X11LIB     = /usr/lib
+
+# for Linux:
+#TCLINCLUDE = /vol/X11/include
+#TCLLIB     = /vol/X11/lib
+#X11LIB     = /usr/lib
+
+
+The "#" at the beginning of a line indicates that the line is a comment.
+So in this example "/vol/local/include" is the directory in which the files 
+"tcl.h" and "tk.h" are searched for and "/vol/local/lib" and "/usr/lib" are
+the directories in which the files "libX11.a", "libtcl.a" and "libtk.a" are
+searched for. 
+Change the path specifications so that they fit to your system. Then type
+"make cage".
+
+
+Once the program "cage" is created, you can start it by typing
+
+  cage 
+
+
+Some problems
+-------------
+
+1) Shared libraries :
+
+Tcl use shared libraries. So on maschines with Linux
+the option -ldl is also required in the makefile. Otherwise you get the
+error message : 
+
+/vol/X11/lib/libtcl.so: undefined reference to `dlerror'
+/vol/X11/lib/libtcl.so: undefined reference to `dlopen'
+/vol/X11/lib/libtcl.so: undefined reference to `dlsym'
+
+2) Tcl and Tk versions :
+
+Tcl and Tk versions are not very compatible. The actuell
+version of CaGe requires Tcl 8.0 and Tk 8.0. 
+To know which version is installed typ :
+
+  wish
+  % put $tcl_version
+  8.0
+  % put $tk_version
+  8.0
+
+If you are trying to run CaGe under Tcl 7.6 and Tk 4.2,
+CaGe will work fine until you start one of the generating 
+programs and it will then cause an error : 
+
+  Segmentation fault.
+
+
+Some hints for usage
+--------------------
+We hope that the usage of cage is self-explaining. However, here are
+some hints:
+
+- The window with the "Quit" button and the "Go to background" button
+  always remains on the screen as long as neither of these buttons is
+  pressed. By pressing the "Quit" button, you can exit the program.
+  By pressing the "Go to background" button, you can do the same, but
+  if there is one graph generation process running, it will not be 
+  cancelled. It will continue in the background.
+
+- After choosing a generation program, an option window appears.
+  Some of the options are included into a box named "extra options".
+  These options are only important for users who know the generation
+  program very well. 
+  By pressing "Start", the graphs are generated.
+  By pressing "Cancel", you return to the window where you can choose
+  another generation program.
+
+- If you choose 3D output, then "cage" pipes this output to other
+  programs. Two possibilities are offered:
+
+  - RasMol
+  - GeomView
+
+  You can only use these options if the relative programs are installed to
+  your system! Otherwise cage will cause an error. Furthermore, these
+  programs must be executable just by typing their names ("rasmol" or
+  "geomview", respectively) without any additional path information.
+  If you use RasMol, then you must move the mouse inside the RasMol window
+  after it appears on the screen. If you use GeomView, then notice that
+  GeomView is not quitted automatically if you quit cage. You must
+  quit it yourself. Furthermore, a pipe program named "togeomview" must
+  be provided.
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+

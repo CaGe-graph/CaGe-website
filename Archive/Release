@@ -1,0 +1,14 @@
+
+wait=wait.$$
+mkfifo $wait
+
+tar cf - CaGe |
+ tee ` proc -i "compress > new.tar.Z; : > $wait" ` |
+ gzip -9 > new.tar.gz
+
+: < $wait
+rm $wait
+
+mv  new.tar.Z   CaGe.tar.Z
+mv  new.tar.gz  CaGe.tar.gz
+

@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>CaGe -- the Tubetypes generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="1" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+
+    <td> 
+      <h1>Tubes and cones</h1>
+      <h2>The nanotube cap window</h2>
+<a name="tubes"></a>
+    </td>
+
+    <td rowspan="5"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+<td><br>
+      <a href="Images/nanotube.png" target="_blank" onClick="return imageWindow (this, 723, 495, 'output options -- initial state');"><img height="268" width="300" src="Images/nanotube.png" border="0" alt="output options -- initial state"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+<td>
+</td>
+    
+<td><br>
+      <a href="Images/nanotube.png" target="_blank" onClick="return imageWindow (this, 723, 495, 'output options -- initial state');"><img height="268" width="300" src="Images/nanotube.png" border="0" alt="output options -- initial state"></a></td>
+
+  </tr>
+
+   </tr>
+
+  <tr valign="top"> 
+    <td><br>
+      <h2>The nanocones window</h2>
+    </td>
+    <td rowspan="1"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p>
+In case of an infinite 3-regular graph with 1 &le; <i>p</i> &le; 5 pentagons (and the rest hexagons) the
+pentagons bend the structure not enough to form a tube -- the structure becaomes a cone.</p>
+
+	  <p>Similar to nanotubes also nanocones can be classified by a certain boundary structure. If 1 &le; <i>p</i>
+	  &le; 5 is the number of pentagons and we set <i>s</i>= 6-<i>p</i> then for <i>p</i> &isin; {1,5} one can 
+	  always find a closed cycle so that the inner part has a boundary structure of ((23)<sup><i>k</i></sup>2)<sup><i>s</i></sup>
+	  for some <i>k</i>. For <i>p</i> &isin; {2,3,4} the boundary structure is either ((23)<sup><i>k</i></sup>2)<sup><i>s</i></sup>
+	  or ((23)<sup><i>k</i></sup>2)<sup><i>s-1</i></sup>(23)<sup>k-1</sup>2. The patches with all maximal 23-subsequences
+	  of the boundary of the same length are called symmetric and the others are called nonsymmetric. Patches with one of
+	  these boundary structures and a pentagon in the boundary are called nanocone-caps. If a patch has the given boundary
+	  structure but no pentagon in the boundary, then all faces adjacent to the boundary can be removed with the result a 
+	  patch of the same type (symmetric or unsymmetric) and the same parameter <i>s</i> but the new parameter <i>k</i>' 
+	  with <i>k</i>'=<i>k</i>-1.</p>
+
+	  <p>In this part one first chooses whether one wants a symmetric or a nonsymmetric boundary. Then one chooses the 
+	  number <i>p</i> of pentagons in the cone and the length of the longest side -- which is the parameter <i>k</i> in 
+	  the description of the boundary above.</p>
+
+	  <p>The generator generates all caps with the given boundary structure. There is a one-one correspondence between 
+	  these caps and nanocones with caps for these parameters, so in fact exactly one representative for every isomorphism 
+	  class of nanocones with the given parameters is generated.<br>Different from nanotubes, different caps can not lead 
+	  to the same cone.</p>
+
+	  <p>Options are:</p>
+	  <ul>
+		<li>generate only caps representing IPR nanocones</li>
+		<li>add a given number of hexagon rings to the generated caps</li>
+	  </ul>
+    </td>
+    <td><br>
+      <a href="Images/cone.png" target="_blank" onClick="return imageWindow (this, 723, 495, 'output options -- initial state');"><img height="268" width="300" src="Images/cone.png" border="0" alt="output options -- initial state"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="hydrocarbons.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            hydrocarbons windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="hydrocarbons"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="triangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="triangulations"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the triangulations windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif" alt=""></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/tubetypes";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

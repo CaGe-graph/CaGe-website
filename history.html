@@ -1,0 +1,783 @@
+<html>
+<head>
+<title>CaGe -- Changes history</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>Changes history</h1>
+      <p>2014-08-20</p>
+      <ul>
+        <li><a href="https://github.com/CaGe-graph/CaGe/issues/19" target="_blank">Fixed bug in selection of generator for cubic graphs with given faces (and their duals).</a></li>
+        <li>Fixed bug with output of folding nets: <a href="https://github.com/CaGe-graph/CaGe/issues/18" target="_blank">after the first folding net was written, each folding net was written twice</a></li>
+      </ul>
+      <p>2014-08-01</p>
+      <ul>
+        <li>Fixed bug in program to generate quadrangulations with given degrees (and their duals): <a href="https://github.com/CaGe-graph/CaGe/issues/15" target="_blank">the program gave an error message if more than one degree had specified limits.</a></li>
+        <li>Fixed bug in the panel for quadrangulations with given degrees (and their duals): <a href="https://github.com/CaGe-graph/CaGe/issues/16" target="_blank">the slider became unreadable when the include button was pressed.</a></li>
+        <li><a href="https://github.com/CaGe-graph/CaGe/issues/12" target="_blank">Improved the start point hints during installation</a></li>
+        <li><a href="https://github.com/CaGe-graph/CaGe/issues/11" target="_blank">Switched back to fullgen as the default generator for fullerenes</a>: this guarantuees a consistent order of the graphs in the output for the different options. You can still use buckygen by turning on the expert mode.</li>
+      </ul>
+      <p>2014-07-17</p>
+      <ul>
+        <li>Added new filter for plantri that speeds up generation of 5-regular graphs</li>
+        <li>Improved selection of generator when generating general plane graphs that turn out to be regular.</li>
+        <li>Added new version of fullgen. This version fixes a bug that did not appear in any of the ways fullgen was used in CaGe.</li>
+      </ul>
+      <p>2014-03-14</p>
+      <ul>
+        <li>Fixed bug with <a href="https://github.com/CaGe-graph/CaGe/issues/10" target="_blank">the output to PostScript</a></li>
+        <li><a href="https://github.com/CaGe-graph/CaGe/issues/3" target="_blank">Added new embedder for benzenoids</a></li>
+      </ul>
+      <p>2013-12-16</p>
+      <ul>
+        <li>Fixed bug which showed two save windows when saving a graph while browsing the output</li>
+        <li>Fixed bug which made CaGe crash when stepping back- and forwards through the wizard while using an external generator</li>
+      </ul>
+      <p>2013-10-18</p>
+      <ul>
+        <li>Bumped Java up to version 1.7</li>
+        <li>Refactored a lot of the Java code</li>
+        <li>Fixed bug in export to TikZ and SVG when the current locale uses commas as decimal separators</li>
+        <li>Reduced the number of logging messages that CaGe writes by default</li>
+        <li>Removed several compiler warnings and one compilation error with the newest version of gcc on Mac OS X</li>
+      </ul>
+      <p>2013-05-28</p>
+      <ul>
+        <li>Fixed a bug in nanotube generator that rarely occured for specific parameters under some Linux systems (such as Ubuntu)</li>
+      </ul>
+      <p>2012-08-09</p>
+      <ul>
+        <li>Fullerenes can now be generated in atlas order.</li>
+        <li>Added buckygen as the main generator for fullerenes.</li>
+        <li>Upgraded plantri to version 4.5.</li>
+        <li>Fixed bug in TwoView that incorrectly scaled rotated images.</li>
+        <li>Added batch export of images as output option for 2D representations.</li>
+        <li>Added smoother scaling of vertices in TwoView.</li>
+        <li>Removed several (possible) compiler warnings.</li>
+        <li>Major refactoring of several parts of the GUI code.</li>
+      </ul>
+      <p>2011-09-02</p>
+      <ul>
+        <li>Fixed bug that caused the tubetype generator to crash on some computers when the tube body had length 0.</li>
+      </ul>
+      <p>2011-08-30</p>
+      <ul>
+        <li>Fixed bug in GUI: some users where experiencing a freezing GUI when opening the JmolViewer on a multicore machine. This should now be fixed. More details can be found in this <a href="https://caagt.ugent.be/trac/ticket/9" target="_blank">ticket</a>.</li>
+      </ul>
+      <p>2011-08-02</p>
+      <ul>
+        <li>When in the nanotubes generator the option to glue a tube to the cap was chosen, one row too many was added.This bug has been fixed.</li>
+        <li>The graphs in TwoView can now be rotated. This rotation is also preserved when saving the image.</li>
+      </ul>
+      <p>2011-06-14</p>
+      <ul>
+        <li>Fixed bug in fullgen. This bug only caused problems in some cases with at least 136 vertices.</li>
+      </ul>
+      <p>2011-05-20</p>
+      <ul>
+        <li>Performed some general refactoring of the code.</li>
+        <li>Added option to highlight faces of a certain size to PS export.</li>
+        <li>Major refactoring of TwoView.</li>
+        <li>Added export to SVG and TikZ in TwoView.</li>
+      </ul>
+      <p>2011-03-08</p>
+      <ul>
+        <li>Fixed a small bug in the fullerenes generator. This bug only caused problems in case of more than 296 vertices.</li>
+        <li>Added export to PNG in TwoView.</li>
+        <li>Added option to highlight faces of a certain size in TwoView.</li>
+        <li>Bumped required version of Java up to 1.5.</li>
+      </ul>
+      <p>2011-02-24</p>
+      <ul>
+        <li>Fixed a small bug in the fullerenes generator and added a file to the source distribution.</li>
+      </ul>
+      <p>2011-01-17</p>
+      <ul>
+        <li>Fixed bug in handling of threads for background tasks: the termination of the thread was handled incorrectly which made it seem in the GUI that the thread never 
+stopped.</li>
+      </ul>
+      <p>2010-12-07</p>
+      <ul>
+        <li>Fixed bug in embedders for nanocones and nanotubes: output of graphs with more than 1000 vertices contained errors.</li>
+        <li>Fixed bug in cones generator: memory usage was calculated incorrectly when hexagon layers were added to the cone patches.</li>
+        <li>Fixed bug in cones generator: incorrect outerspirals for cones with two pentagons when hexagon layers were added to the cone patches.</li>
+      </ul>
+      <p>2010-09-20</p>
+      <ul>
+        <li>Included a new version of the generator for nanocones.</li>
+        <li>Improved heuristic that decides to use CGF or plantri.</li>
+        <li>Limit memory usage of CGF to 1.5Gb. This should be small enough for most 
+modern computers.</li>
+      </ul>
+      <p>2010-03-15</p>
+      <ul>
+        <li>The tube generator was found to contain an error that was probably present all the time but 
+revealed by a change of compiler. From a certain time on the numbers of structures were different than those 
+published -- and generate by the same program. The generator is now replaced by one not showing 
+this behaviour.</li>
+        <li>Some generators weren't compiled with -O4.</li>
+      </ul>
+      <p>2010-03-10</p>
+      <ul>
+        <li>We discovered a bug in the tubetype generator when compiled 
+with a recent compiler. Until this issue can be resolved we've disabled this 
+generator.</li>
+      </ul>
+      <p>2010-01-22</p>
+      <ul>
+	<li>Removed some warnings during installation.</li> 
+      </ul>
+      <p>2009-10-06</p> 
+      <ul>
+        <li>Flush the buffer of the outputstream each time a result is saved from the ResultPanel.</li>
+      </ul>
+      <p>2009-09-03</p> 
+      <ul>
+        <li>Fixed a bug in the supplied implementation of tee.</li>
+        <li>Added a dock icon on Mac OS X and window icons on Linux.</li>
+		<li>Added two new embedders written by Simon Buelens: these embedders are specific embedders for nanocones and nanotubes.</li>
+      </ul>
+      <p>2009-06-19</p> 
+      <ul>
+        <li>The categories of CaGe have been reorganized and several generator panels have been reworked.</li>
+        <li>Generators were added for quadrangulations, 4-regular plane graphs, nanocones, hydrocarbons for
+		    a given boundary structure and hydrocarbons for a given number of hexagons.</li>
+        <li>CaGe now uses version 11.4.4 of Jmol instead of version 0.6.4.</li>
+        <li>File and pipe are separated options in the output panel.</li>
+        <li>Added separate field for input from file in the external generator panel.</li>
+        <li>The "embed as" section of the external generator panel has been completely reworked.</li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2008-07-16</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">A bug in
+	  embed.c was fixed: for graphs with adjacent pairs of vertices of degree two,
+	  an incorrect outer face could appear in planar embeddings.
+	  In rare circumstances, this would prevent the user from choosing
+	  an outer face by mouse click.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2008-01-10</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Updated
+	  three generator source files (<a href="fullerenes.html">fullgen.c</a>,
+	  <a href="tubetypes.html">tubetypes.c</a>, <a href="hydrocarbons.html">HCgen.c</a>)
+	  to obtain a constant for timekeeping (CLK_TCK) in a more compatible way.
+	  This should resolve compilation problems on recent Ubuntu systems. We have
+	  also observed problems with opening CaGe Windows on current Ubuntu systems
+	  using the Compiz window manager (Compiz&nbsp;0.6.1), but this seems to be
+	  a known problem between Compiz and Java. We can therefore only recommend
+	  switching to a different window manager.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2007-10-08</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">As foreseen
+	  in the last history item (just below this one), here is a "stable" update
+	  to <a href="trireg.html" title="the 3-regular Graphs generator">CGF.c</a>
+	  from the generator's original author, Thomas Harmuth.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2007-07-22</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="trireg.html" title="the 3-regular Graphs generator">CGF.c</a>
+	  has been found to include diagnostic information in its data stream
+	  in some cases, confusing our graph reading routine. A preliminary
+	  fix has been made and is included in the download package now. The
+	  author of the generator has been contacted to make sure we've done
+	  everything right -- there may be an update later.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2007-04-04</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">We
+	  now hope to have eliminated all compilation warnings from
+	  the install process. If you still see warnings, please let us know.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2007-03-30</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Fixed 
+          some GUI problems for Mac OS&nbsp;X.<br>
+	  (We are also working on warnings that might appear on some Linux
+	  systems as the generators or native libraries are compiled.)
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2007-03-22</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">New
+          version: <b>Mac OS&nbsp;X now supported</b>, various other changes
+	  to eliminate warnings and make CGF 64-bit compatible.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2005-01-12</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Replaced
+          fullgen with a slightly updated version.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2002-11-11</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Fixed 
+          a Java exception reported for certain JVMs.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Made the 
+          source code available for download.
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2002-02-15</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">For each 
+          generator built into CaGe (through its own option window and a corresponding 
+          section in the configuration file, </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">) 
+          you are now asked to include configuration options to say whether the 
+          &quot;<a href="external.html">external generator</a>&quot; option window 
+          should include this generator as a template for embedding. Currently 
+          we include all the generators in our standard distribution, but the 
+          option is now there to change that.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="twoview.html">TwoView</a>'s 
+          2D re-embedding feature can now be disabled by a generator's option 
+          window. Disabling is not effective if a generator is used as a template 
+          for external data, where 2D re-embedding is always enabled. The two 
+          generator windows that currently use this are &quot;hydrocarbons&quot; 
+          and &quot;triangulations&quot; (if triangulations of the disks are chosen). 
+          Both these generator windows will read a configuration parameter in 
+          </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">, 
+          making it possible to switch the re-embedding feature back on.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Whereever 
+          CaGe shows the standard &quot;Previous&quot; and/or &quot;Next&quot; 
+          buttons in one of its windows, you can now use the Alt+Left and Alt+Right 
+          key combinations to operate these buttons.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The status 
+          line shown in the <a href="results.html">results window</a> shows different 
+          kinds of messages, and it was sometimes hard to decide which message 
+          should take precedence. This has been organized through a system of 
+          priority levels, leading to more deterministic behaviour and cleaner 
+          code.<br>
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2002-02-06</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">If you 
+          stop an interactive task by releasing the &quot;flow&quot; button, CaGe 
+          used to continue reading the generator's input until the next graph 
+          had come in completely. The user had to wait for this indefinite amount 
+          of time before it was possible to choose where to advance next (although 
+          reviewing was always possible while waiting for a new graph). Now, when 
+          stopping, CaGe has access to the latest graph that has finished being 
+          read, so the stop is immediate and CaGe completes reading the next graph 
+          in the background. If the graph stopped at in this way is new to CaGe, 
+          it will be displayed in the usual way; if not, no further action is 
+          taken. Another consequence of this change: if you start flowing or advancing 
+          and no new graph is coming in soon, you can stop and use the buttons 
+          to advance to a different graph than the one you targeted before. Say 
+          you pressed &quot;+10&quot; and the graph number doesn't increase for 
+          a while. You can then release &quot;flow&quot; and press &quot;+1&quot; 
+          to advance to that earlier graph instead. It works the other way round 
+          as well (advance by 1 first, then change your mind and advance by 10 
+          before the first graph has arrived), and you can change between flowing 
+          and advancing as well.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">With the 
+          Rasmol viewer it was previously impossible to use any menu entries that 
+          ask for user input, such as saving the current graph or using Rasmol's 
+          Export functions. This has now changed. Whenever you use a menu item 
+          that causes Rasmol to ask a question, that question is passed on to 
+          the user: a dialog appears, featuring the question and asking for a 
+          response. CaGe does this by checking Rasmol's output for a question 
+          (a line ending in &quot;:&quot;, plus possibly some white space) at 
+          a regular interval. The length of the interval is set in </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">.<br>
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-12-15</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">As a shortcut 
+          for viewer selection, you can now shift-click a viewer to select it 
+          &quot;exclusively&quot;, deselecting all other viewers in the same dimension. 
+          Focusing the checkbox and typing Shift-Space works as well.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Added 
+          a feature and configurability to the way graph numbers are displayed 
+          when a task is running. The graph number is updated every <i>n</i> graphs, 
+          but also if no such update has taken place after <i>delta</i> milliseconds. 
+          Both <i>n</i> and <i>delta</i> can be set in CaGe.ini, separately for 
+          foreground and background tasks. See </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">.<br>
+          </font></li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-11-30</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">When clicking 
+          in TwoView causes a graph to be re-embedded, all other viewers as well 
+          as the result window are now notified. The &quot;2D&quot; save button 
+          is re-enabled (in case it had been pressed before), and other viewers 
+          that use 2D coordinates (such as the text viewer) update their display.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The file 
+          extension suggested for the writegraph format is now changed to &quot;.w?d&quot;, 
+          not &quot;.s?d&quot; as it was previously. (&quot;?&quot; is the dimension, 
+          as the digit &quot;3&quot;, &quot;2&quot; or &quot;0&quot; [zero if 
+          writegraph format is used for plain adjacency information].) <br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Fixed 
+          a bug that could prevent exiting when background tasks are still active 
+          but &quot;Exit&quot; is clicked when CaGe shows the background tasks 
+          window with the appropriate warning.<br>
+          <br>
+          </font></li>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The following 
+          suggestion by an interested user has been implemented:<br>
+          <font size="1">&gt; <br>
+          &gt; I have a suggestion concerning the PS files written by TwoView.<br>
+          &gt; Sometimes it is necessary to adjust the picture manually for<br>
+          &gt; publication, especially for larger graphs. To make this easier,<br>
+          &gt; the coordinates of each vertex can be written just once.<br>
+          &gt; <br>
+          &gt; For example, instead of<br>
+          &gt; <br>
+          &gt; 1.1111 2.2222 3.3333 4.4444 edge<br>
+          &gt; <br>
+          &gt; 1.1111 2.2222 vertex<br>
+          &gt; 3.3333 4.4444 vertex<br>
+          &gt; <br>
+          &gt; use<br>
+          &gt; <br>
+          &gt; /v1 { 1.1111 2.2222 } bind def<br>
+          &gt; /v2 { 3.3333 4.4444 } bind def<br>
+          &gt; <br>
+          &gt; v1 v2 edge<br>
+          &gt; <br>
+          &gt; v1 vertex<br>
+          &gt; v2 vertex<br>
+          &gt; <br>
+          &gt; Now each vertex is easy to move. Of course, when vertex numbers<br>
+          &gt; are drawn the name of the vertex (eg &quot;v2&quot;) should correspond 
+          to the<br>
+          &gt; number (eg &quot;2&quot;).<br>
+          &gt; <br>
+          &gt; ALSO, it would be nice if there was a way to configure the colour<br>
+          &gt; of the vertex number and the colour used to fill the vertex.<br>
+          &gt; <br>
+          </font>There are TwoView parameters in </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          to set the three colours used (one for the numbers, two for the blend 
+          fill inside the vertex symbols). These are explained in </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">. 
+          TwoView copies them to the front of every single graph it writes to 
+          a PS file, so colours can be changed for a single graph by editing the 
+          respective setting in the PS file. To change the default colours, edit 
+          </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">. 
+          Note that these options apply only to the PS files written by TwoView, 
+          not the screen display. The default settings produce PostScript colors 
+          matching those in the TwoView window.</font> 
+          <p> 
+        </li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-11-07</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The new 
+          website has gone &quot;official&quot;! <br>
+          (after a shady existence in the &quot;preview&quot; subdirectory)</font> 
+          <p> 
+        </li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-10-12</font> 
+      <ul>
+        <li><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Improved 
+          the way TwoView reads its parameters out of CaGe.ini, and added some 
+          more. All of TwoView's settings are now fully configurable. Details 
+          in </font><tt><b>CaGe.ini</b></tt><font face="Verdana, Arial, Helvetica, sans-serif" size="2">.</font> 
+          <p> 
+        </li>
+      </ul>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-09-24</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CaGe can 
+          now be started from any directory, there is no need to change into the 
+          installation directory. CaGe still needs to know where it is installed, 
+          but finds out if either the path to the </font><TT><B>cage.sh</B></TT><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          script is explicitly used in the call, or if it is part of the standard 
+          search path. <BR>
+          A related, but independent issue is what directory is used to run generators, 
+          embedders and do everything else that can cause files to be created. 
+          This is controlled by the </font><TT><B>CaGe.Generators.RunDir</B></TT><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          configuration setting, and that again can be set to any directory whatsoever, 
+          including "." for the directory that the user is in when starting the 
+          </font><TT><B>cage.sh</B></TT><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          command. <BR>
+          See </font><TT><B>CaGe.ini</B></TT><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          for details.</font> 
+          <P> 
+        </LI>
+        <LI><TT><B>CaGe.ini</B></TT><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          contains a more sophisticated substitution mechanism than before. In 
+          every setting, it is now possible to use other configuration settings, 
+          Java system properties or environment variables. The syntax is explained 
+          at the top of the file. <BR>
+          (This actually is the key to CaGe's new capability of being started 
+          from any place in the file system.)</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The recent 
+          problems with the embedder have been resolved. (Mentioned on 2001-08-09.) 
+          Also, tubes are now intially displayed "sideways", not "facing" the 
+          user. <BR>
+          Some minor bugs with the background tasks window have been noticed and 
+          removed.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-09-14</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CaGe's 
+          exit functions are now prevented from working while background tasks 
+          are still active, unless the user chooses to exit anyway. <BR>
+          (Background tasks are defined to be generation processes that write 
+          into files as well as the production of folding nets. The mechanism 
+          described here replaces the old "foldnet making" dialog described on 
+          19 June.) <BR>
+          If the user tries to exit CaGe (via an "Exit" button or the window control 
+          buttons) while background tasks are still active, the "background tasks" 
+          window is changed to function as a dialog. It draws the user's attention 
+          to the still active tasks and offers two buttons to exit anyway or cancel 
+          the exit action. The user may then use those buttons, just wait for 
+          all background tasks to finish, or click the "stop" and "abort" buttons 
+          next to the active tasks to abort them manually. After all background 
+          tasks have finished, the background dialog informs the user of the new 
+          situation. CaGe will then exit automatically if the user has only waited. 
+          If any stop or abort button was clicked, CaGe waits for the user to 
+          decide whether to exit or cancel (i.e. return to CaGe).</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The search 
+          path option in </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          ("</font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>Generators.Path</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">") 
+          can now use environment variables such as </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>PATH</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">. 
+          To use an environment variable, include a string of the form </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>${name}</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          in the value of </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>Generators.Path</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">. 
+          It will be substituted by the environment value of "name". To have a 
+          string of this form included "as is", double the leading '</font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>$</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">' 
+          -- the extra character will be stripped off and everything else left 
+          unchanged. <BR>
+          As a consequence of this format, variable names cannot include the '</font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>}</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">' 
+          character -- if that is a problem, sorry. :-) If no value for "name" 
+          exists in the environment, an empty string will be substituted. <BR>
+          If a path entry (a space-separated component) becomes the empty string 
+          as a result of a substitution(*), the word is completely deleted from 
+          the path -- there will be no empty-string path members. member of the 
+          path. <BR>
+          (*) This happens if (and only if) the entry consists just of a sequence 
+          of "</font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>${name}</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">"s 
+          and each name is either missing from the environment or present but 
+          mapped to the empty string.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-08-09</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Graph 
+          generation tasks that write into files are no longer handled by a reduced 
+          variant of the result window used for interactive (viewer) tasks. Instead, 
+          a separate "background tasks" window has been introduced that shows 
+          the progress of each such task. It features two buttons for each task, 
+          one to show some information about the task (labelled by a number) and 
+          another to stop the task. <BR>
+          There is currently no safeguard to prevent users from exiting CaGe while 
+          there still are unfinished background tasks. This will appear soon.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CaGe's 
+          "stopping behaviour" has changed slightly. Previously, after the Stop 
+          button was pressed, the generator pipe producing graphs would be "read 
+          out" and the number of graphs thus read displayed in the result window, 
+          but the user couldn't do anything with those additional graphs. This 
+          feature has been dropped: no more reading takes place after Stop is 
+          pressed, making stopping faster and more reliable. (Problems had been 
+          observed when no viewer was chosen and the result window was put into 
+          "auto-advance" mode, i.e. before the introduction of the background 
+          tasks window.)</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The text 
+          viewer now shows a header in a separate area above the actual graph 
+          information, and this line does not move out of sight when the user 
+          scrolls down. And a bug has been fixed that prevented scrolling to the 
+          right and bottom ends of large texts, both in the text viewer and in 
+          the dialogs showing other textual information (such as generator diagnostics). 
+          A nice small margin of 5 pixels to all four sides also been introduced 
+          for all these text displays.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">One bug 
+          is "work in progress": 2D-embedding of hydrocarbons has somehow become 
+          worse than before.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-07-26</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">More than 
+          one viewer can now be chosen. <BR>
+          The output window prevents users from deselecting all viewers for a 
+          dimension (2D or 3D). Therefore, if you want to replace the first selected 
+          viewer by another one, start by selecting the other viewer, then deselect 
+          the first one. <BR>
+          The text viewer plays a special role: it is one and the same viewer 
+          for both dimensions, and turning it off for one dimension also turns 
+          it off for the other. This can lead to the following strange situation: 
+          Imagine you have both 2D and 3D viewing selected, with just the text 
+          viewer for 2D, but more viewers for 3D. Now you turn the text viewer 
+          off in 3D. This deselects the text viewer in 2D as well, leaving no 
+          2D viewer selected. Now the output window does not block this deselection, 
+          but instead turns 2D viewing off altogether -- another way of ensuring 
+          that at least one 2D viewer should be selected if 2D viewing is on.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The text 
+          viewer only shows those coordinates that have been chosen for view (2D, 
+          3D, or both). Previously the viewer always showed 2D and 3D coordinates, 
+          using zeros for coordinates that had not been generated.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">In the 
+          output options window, file/pipe output can now be chosen. If this is 
+          done, the result window reduces itself to a simple graph counter.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Rasmol 
+          has been introduced as a 3D viewer. The "rasmol" command must be in 
+          the PATH of the CaGe process, otherwise Rasmol will not appear as a 
+          choice in the output window. <BR>
+          Unless expert mode is set in the </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          file, a warning is generated about two problems we have with Rasmol. 
+          The warning only appears once per CaGe session.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">If any 
+          embedding process fails and generates an exception, the resulting dialog 
+          now includes the embedder's diagnostic output (any output written to 
+          the stderr stream). In case the embedder produces a valid graph and 
+          some diagnostic output as well, the graph is displayed, but an exception 
+          is also generated to enable inspection of that output.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-07-13</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Two changes 
+          have been made for CaGe's expert mode, which can be set in the </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          file. <BR>
+          <BR>
+          Generator windows are now able to record whether the embedder command 
+          lines returned to CaGe have changed since the last use of that particular 
+          generator window. All current generator windows set this information. 
+          In expert mode, this is used to avoid resetting the embedder command 
+          lines in the output window if possible, making it easier for experts 
+          to edit those embedder command lines, start a trial run, and return 
+          to output options to edit the command lines again. <BR>
+          If you do want to reset an embedder command line to its default value, 
+          do one of the following (while looking at the embedder command lines 
+          in the output window): 1. go back to the generator window (click "Previous"), 
+          change some option that affects the embedder command line and return 
+          to output options ("Next"); or 2. (as it will generally be unclear in 
+          1. how a change to the embedder command lines can be caused:) clear 
+          the embedder command line that is to be reset, go back to the generator 
+          window and then forward to the output window again (clicking "Previous" 
+          and then "Next" immediately). <BR>
+          <BR>
+          Setting expert mode also adds a "Previous" button to the results window, 
+          so output options of the current generator process are now just one 
+          mouse click away from the results window. By clicking "Previous" in 
+          the results window, the generation process is stopped (as in "Cancel" 
+          which returns to the very first window of CaGe) and the output window 
+          redisplayed in the state is was left. No embedder or generator command 
+          lines are reset to the state that would be suggested by the generator 
+          window. (The "Previous" button is not provided in "non-expert" mode 
+          for aesthetic reasons.</font></LI>
+        <P> 
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-07-10</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Graphs 
+          selected in the result window can now be saved in all varieties (adjacency 
+          information, 2D or 3D embedding as well as folding net). There is a 
+          section in </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          listing the different formats available, each of which must be implemented 
+          by a Java class. All filenames entered for saving (be they in the result 
+          window or the PostScript filename in the TwoView window) are relative 
+          to the "Generators.RunDir" directory (specified in </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">), 
+          and can stand for a pipe to write to rather than a file if they start 
+          with "|".</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">All known 
+          ways in which a hanging or slow generation process was able to freeze 
+          the result window should have been eliminated.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The TwoView 
+          window no longer freezes while graphs are realigned or reset. It is 
+          also possible to see, from the state of the "reset embedding" button, 
+          if the embedding is in its initial state or not. (The button is enabled 
+          only if the embedding has previously been changed.)</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The Jmol 
+          Applet viewer now remembers its display settings (bond and and atom 
+          draw mode [S], bonds display on/off [B], label mode [L]) within one 
+          generation process (i.e. while results window is not cancelled). Between 
+          different incarnations of the result window, no settings are remembered. 
+          The Jmol Applet is now somewhat faster in displaying a (large) graph. 
+          </font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-07-06</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">New, improved 
+          sliders: look better, work better, less filling!</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The result 
+          window now gives hints about the fact that the "view:" can be used for 
+          navigation as well (by entering a graph number). <BR>
+          (The hints are the label - "view/goto" - and a tool tip that is displayed 
+          when the mouse comes to rest over the field.)</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Improved 
+          install script -- it is now possible to start a full search for a Java 
+          installation (using "find").</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The hydrocarbons 
+          window has lost its sometimes "jumpy" behaviour.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-06-28</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Embedding 
+          is now done in a separate thread, so windows don't freeze if embedding 
+          hangs or takes very long. It is actually possible to inspect old graphs 
+          until a newly created graph has finished being embedded. <BR>
+          (For large graphs, just displaying can mean some waiting, too, and windows 
+          still freeze during that process -- but at least we can be quite sure 
+          that displaying won't cause CaGe to hang.)</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The "<I>CaGe.EmbedExpertMode</I>" 
+          option in </font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          has been renamed to "<I>ExpertMode</I>" and now allows seeing and editing 
+          the generator command as well as the embedder commands.</font> 
+          <P> 
+        </LI>
+        <LI> <font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>CaGe.ini</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+          is now mentioned both by the install script and the web page. The install 
+          script now uses chmod to make '</font><font face="Verdana, Arial, Helvetica, sans-serif"><TT><B>cage.sh</B></TT></font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">' 
+          executable.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-06-21</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">New generator 
+          windows for triangulations and polytopes, both making use of <A HREF="http://cs.anu.edu.au/people/bdm/plantri/">plantri</A> 
+          (version 4.0).</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The way 
+          bonds (edges) are drawn in the Jmol 3D viewer applet has been significantly 
+          improved (but it's by no means perfect yet).</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">It is 
+          now possible to restart the generation process after it has finished. 
+          The "Stop" button in the result selection window changes to "Restart" 
+          at that time (or after the process has been stopped using that very 
+          button).</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CGF now 
+          seems fine, so it's reinstated as the only 3-regular generator. CPF 
+          is still installed in case we find further problems.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Writing 
+          results into a file remains unimplemented at this time, but at least 
+          the ouput options window now tells you so.</font> 
+          <P> 
+        </LI>
+      </UL>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2">2001-06-19</font> 
+      <UL>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Folding 
+          nets can now be produced (if 3D viewing is chosen). Production of folding 
+          nets takes place asynchronously, there is no need to wait for results. 
+          If the users selects to exit CaGe before foldnet making has finished, 
+          a dialog appears which informs about the progress of folding net making. 
+          To test "slow" folding nets, try generating tubes with parameters (l,&nbsp;m) 
+          for l&nbsp;=&nbsp;m&nbsp;=&nbsp;6 or more.</font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The TwoView 
+          window has less controls and is now automatically placed in the upper 
+          right corner of the screen (by special request). The CaGe.ini file can 
+          contain options to set the default width and brightness of graph edges. 
+          </font> 
+          <P> 
+        </LI>
+        <LI><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CGF can 
+          now be used instead of CPF. Because of a problem with CGF when setting 
+          limits for some face types, a CPF window is still provided.</font> 
+          <P> 
+        </LI>
+      </UL>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td align="right"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="results.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">Viewing 
+            Results <img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" id="selecting" width="6" height="11" border="0" alt="&lt;" name="results"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="technical.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="technical"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Technical 
+            Information</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "download/history";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

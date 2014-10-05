@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>CaGe -- using an External generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666" onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The external generator window</h1>
+    </td>
+    <td rowspan="6"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p> In this window graph data from files or the standard output of programs can be read in.
+The data has to be in one of the two <a href="technical.html#formats">formats</a> that CaGe
+understands.
+</p>
+      <p><br>
+ 
+When reading graph data representing plane graphs of very different nature, finding 
+<em> good </em> 2D and 3D embediings efficiently is especially difficult and the assistance
+of the user is asked.
+The user can keep embedding information contained in the data or
+take that information as a starting point for further refinement.<br>
+
+The embedding programs in CaGe are specialized on certain kinds of graphs, so if a new 
+embedding must be computed, the user
+has to describe which shape he would expect the graphs to have in order to give a hint
+which embedder should best be used. The user has to choose whether the expected threedimensional shape is
+
+
+	  <ul>
+		<li>rather flat </li>
+		<li>rather spherical  </li>
+		<li>rather tubular </li>
+	  </ul>
+
+</p>
+<p>
+Furthermore the user can increase or decrease the number of steps of the embedding routine.
+
+</p>
+
+
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="polytopes.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            general plane graphs windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="polytopes"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap>&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/external";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

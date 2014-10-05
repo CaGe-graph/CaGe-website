@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>CaGe -- the Hydrocarbon windows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The Hydrocarbon windows</h1>
+    </td>
+    <td rowspan="8"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br> In CaGe &quot;hydrocarbon&quot; stands for &quot;planar polycyclic
+hydrocarbon with pentagonal and hexagonal faces&quot; - or mathematically speaking: for
+2-connected plane graphs with a distinguished outer face where all bounded faces are pentagons or
+hexagons, all vertices not in the boundary of the outer face have degree 3 and all
+vertices in the boundary of the outer face have degree 2 or 3. For the mathematical description
+the hydrocarbons are considered with the H-atoms removed. The default is also to output and display the
+structures without the H-atoms.
+
+There are 3 different windows for hydrocarbons. These 3 differ in
+	  the parameters describing the class.</p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td><br>
+      <h2>Hydrocarbons by formula</h2>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+      In this window all hydrocarbons with a given constitutional formula
+C<font size="-2"><sub>x</sub></font>H<font size="-2"><sub>y</sub></font>
+and a given number of pentagons
+ can be generated.
+      You give the number of C-atoms (x in the example), H-atoms (y)
+      and the number of pentagons and then all
+      hydrocarbons (in the sense described above) are generated.</p>
+<p>
+Further options allow to generate
+	  <ul>
+		<li>only structures without neighbouring pentagons (<a href="trireg.html#IPR">IPR</a>)</li>
+		<li>only strictly peri-condensed structures (the removal of the vertices contained in one face or edge will not disconnect the structure) </li>
+<li> only structures with a bounded number of consecutive 3-valent C-atoms in the cyclic order
+around the boundary. This parameter influences the local curvature of the boundary and has a connection
+to local overlaps of the structures. </li>
+	  </ul>
+</p>
+<p>
+One can also choose to output the structures with the H-atoms attached.
+
+</p>
+    </td>
+    <td><br>
+      <a href="Images/hydrocarbon_formula.png" target="_blank" onClick="return imageWindow (this, 550, 515, 'A hydrocarbon with formula C25H13');"><img height="268" width="300" src="Images/hydrocarbon_formula_small.png" border="0" alt="A hydrocarbon with formula C25H13"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+    <td><br>
+      <h2>By boundary structure</h2>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+        The boundary structure of a planar polycyclic hydrocarbon is described as 
+		the cyclic sequence of its boundary degrees. The boundary structure of
+		azulene would e.g. be the cyclic sequence "222322223".
+		This generator generates all planar polycyclic hydrocarbons for a given
+		cyclic sequence of twos and threes that correspond to 0 &le; <i>p</i> &le; 5 pentagons.
+		If <i>d</i> stands for the number of vertices of degree two 
+		in the boundary and <i>t</i> for the number of vertices of degree 3 then we have
+		<i>p</i>=6-(<i>d</i>-<i>t</i>), so the number of pentagons is uniquely determined by the boundary.
+		The restriction <i>p</i> &lt; 6 is essential because for p &ge; 6 the number
+		of structures can be infinite (see e.g.  <a href="tubetypes.html#tubes">nanotubes</a>).
+		</p>
+		<p>An option for the generator is to allow only structures with isolated pentagons
+		and again one can choose to output structures with or without hydrogens attached.</p>
+    </td>
+    <td><br>
+      <a href="Images/azulene.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'Azulene');"><img height="268" width="300" src="Images/azulene_small.png" border="0" alt="Azulene"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td><br>
+      <h2>By number of hexagons</h2>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+      Fusenes are planar polycyclic hydrocarbons with all bounded faces hexagons.
+      In this window one can generate all fusenes with a given number of hexagons.
+</p>
+		<p>As options one can restrict the generation to 
+	  <ul>
+		<li>benzenoids (that is: fusenes that are subgraphs of the hexagonal lattice)</li>
+		<li>catacondensed fusenes (all the vertices are in the boundary)</li>
+		<li>Kekulean fusenes (fusenes with a perfect matching - that is a subset M of edges so
+that every vertex is contained in exactly one of the edges of M)</li>
+	  </ul>
+.</p>
+    </td>
+    <td><br>
+      <a href="Images/fusene.png" target="_blank" onClick="return imageWindow (this, 550, 515, 'A fusene with 7 hexagons');"><img height="268" width="300" src="Images/fusene_small.png" border="0" alt="A fusene with 7 hexagons"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="fourreg.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            4-regular plane graphs windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="fourreg"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="tubetypes.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="tubetypes"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            tubes and cones windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/hydrocarbons";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

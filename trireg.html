@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>CaGe -- the 3-regular plane graphs windows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="20" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The 3-regular plane graphs windows</h1>
+  </tr>
+  <tr valign="top"> 
+    <td>
+      <p>3-regular plane graphs are plane graphs where every vertex has exactly 3 neighbours.
+      Especially in the mathematical literature 3-regular graphs are also called &quot;cubic&quot;
+      graphs.
+      There are 4 different interfaces that allow to further specify the class of graphs that shall be 
+ generated.</p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td>
+	  <br>
+	  <h2>General cubic plane graphs</h2>
+      <p> In this window there are relatively few possible
+      restrictions to the class of cubic plane graphs that can be
+      chosen. One must choose the number of vertices and can choose
+      lower bounds for the face size and the &quot;cyclic
+      connectivity&quot; of the graphs.  <br/>
+
+      The cyclic connectivity of a connected graph is the smallest
+      number of vertices that can be removed so that the graph becomes
+      disconnected and every part contains at least one cycle. Due to
+      the Euler formula, a cubic plane graph can be at most cyclically
+      5-connected, so the values 1 to 5 that can be chosen span the whole range.  
+      The default is
+      &quot;cyclically 3-connected&quot;. Choosing &quot;cyclically 1-connected&quot;
+       would not restrict the class at
+      all.  <br/>
+
+      Due to the Euler formula the minimum face
+      size in a cubic plane graph is 3,4, or 5. So all possibilities are covered.
+      The default is &quot;minimum face size 3&quot; which is in fact not restricting the class at all.
+      </p>  
+</td>
+   </p> 
+
+    </td>
+    <td><br>
+      <a href="Images/generalcubic.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'A general cubic plane graph');"><img height="268" width="300" src="Images/generalcubic_small.png" border="0" alt="A general cubic plane graph"></a></td>
+</tr>
+<tr>
+
+<td valign=top>
+	  <br>
+	  <h2>Fullerenes</h2>
+<a name="fullerenes"></a>
+      <p> 
+A more detailed description than this short one - and also with additional links about e.g.
+the discovery of fullerenes - can be found <a href="fullerenes.html">here</a>.      </p> 
+
+      <p> Fullerenes are molecules consisting of carbon atoms lying on the surface of a
+(topological) sphere. The mathematical models for fullerenes are cubic plane graphs where
+all the faces are pentagons or hexagons. The Euler formula immediately implies that there 
+are exactly 12 pentagons and it is easy to show that fullerenes are 3-connected and 
+cyclically 5-connected.
+ <br/>
+One must give the number of vertices of the fullerenes one wants to generate. It is also possible
+to give a range of vertex numbers. Furthermore one can choose to output the 
+<a href="definitions.html#dual">dual</a> graphs or graphs that obey the 
+<a name="IPR">&quot;IPR-rule&quot;</a> -
+that is graphs where no two pentagons share an edge. <br/>
+
+It is also possible to make CaGe compute the symmetry groups of the structures and filter
+the output for graphs with a given symmetry group. But this should be used with care:
+because this option is implemented as a filter,
+the number of structures generated per second can be very low in cases where only a small ratio of
+the graphs have the given group. For large vertex numbers this 
+is the case for practically all groups except C1.
+
+   </p> 
+
+    </td>
+    <td><br>
+      <a href="Images/fullereen.png" target="_blank" onClick="return imageWindow (this, 550, 515, 'A fullerene');"><img height="268" width="300" src="Images/fullereen_small.png" border="0" alt="A fullerene"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+    <td> 
+	  <br>
+	  <h2>Cubic plane graphs with given face sizes</h2>
+	  <a name="givenfaces"></a>
+	  <p>
+	  This window offers a generalization of the fullerenes window. So in principle fullerenes
+can also be generated in this window - only that the options that are special for fullerenes 
+(like e.g. <a href="trireg.html#IPR">IPR</a>) are not available. <br/>
+
+One must specify the number
+          of vertices and can choose the face sizes that are allowed. In addition one can choose
+limits for the numbers of faces for a given size (e.g. &quot;between 2 and 5 4-gons&quot;) and 
+allow only graphs with a certain connectivity number. Allowing only pentagons and hexagons would 
+lead to the generation of fullerenes.</p>
+
+    </td>
+    <td><br>
+      <a href="Images/allowedfacescubic.png" target="_blank" onClick="return imageWindow (this, 550, 515, 'A cubic plane graph with given face sizes');"><img height="268" width="300" src="Images/allowedfacescubic_small.png" border="0" alt="A cubic plane graph with given face sizes"></a></td>
+  </tr>
+
+
+
+  <tr valign="top"> 
+    <td> 
+	  <br>
+	  <h2>Bipartite cubic plane graphs</h2>
+	  <p>
+<a name="bipartite">Bipartite</a> graphs are graphs where the set of vertices can be split
+into two parts so that no two vertices in the same part are adjacent. For plane graphs this
+is equivalent to the requirement that all faces have even length and in the case of regular
+graphs it also implies that both parts have the same size. <br/>
+
+One has to give the number of vertices 
+and can choose lower
+bounds or exact values for the cyclic connectivity. Because every bipartite cubic plane graph
+contains quadrangles, there are no such graphs with a larger cyclic connectivity number than 4.
+
+<br/>
+
+While for cyclic connectivity 3 or 4 a specialized generator is used, for 1 and 2 the generator
+CGF designed for <a href="trireg.html#givenfaces">cubic plane graphs with given face sizes</a>)
+is used. This generator is designed for relatively few allowed face sizes and not for this case,
+so its performance in this case is not very good and it should be replaced by a specialized
+generator in the future.
+</p> 
+
+	</td>
+
+    </td>
+    <td><br>
+      <a href="Images/bipartitecubic.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'A bipartite cubic plane graph');"><img height="268" width="300" src="Images/bipartitecubic_small.png" border="0" alt="A bipartite cubic plane graph"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap>&nbsp;</td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="fourreg.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="fourreg"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            4-regular plane graphs windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/trireg";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

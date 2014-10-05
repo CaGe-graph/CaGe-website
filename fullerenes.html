@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>CaGe -- the Fullerenes generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666" onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1><font face="Verdana, Arial, Helvetica, sans-serif" size="4" color="#FFFFFF">The 
+        fullerenes generator</font></h1>
+    </td>
+    <td rowspan="6"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Fullerenes 
+        are spherically shaped molecules built entirely from carbon atoms. Each 
+        of these has bonds to exactly three other carbon atoms. The carbon atoms 
+        form rings of either five atoms (pentagons) or six atoms (hexagons). Due 
+        to the Euler formula there are exactly twelve pentagons. </font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Our 
+        fullerene generator is called &quot;<b>fullgen</b>&quot;. 
+For a scientific article on fullgen, see
+        the bottom of this page.)</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The best-known 
+        fullerene is the &quot;buckyball&quot; molecule which consists of 60 carbon 
+        atoms. If you try running fullgen with the number of atoms set to 60, 
+        you will find that there are far more C<font size="-2"><sub>60</sub></font> 
+        fullerenes than just the &quot;buckyball&quot; -- 1812 differently built 
+        molecules actually. The &quot;buckyball&quot; molecule stands out from 
+        the full set by its &quot;football&quot; look, which is a very symmetric 
+        shape -- some authors have called the &quot;buckyball&quot; the most symmetric 
+        molecule in the world</font><font face="Verdana, Arial, Helvetica, sans-serif" size="2">. 
+        In mathematical terms, it has a large symmetry group, i.e. there are many 
+        different rotations and reflections which, applied to the buckyball, will 
+        permutate the atoms but give you the same shape in the same position. 
+        There are two ways of reducing fullgen's output set to just the &quot;buckyball&quot; 
+        when C<font size="-2"><sub>60</sub></font> fullerenes are generated.</font></p>
+    </td>
+    <td><a href="Images/fullgen.gif" target="_blank" onClick="return imageWindow (this, 800, 450, 'fullerenes options window');"><img height="53" width="100" src="Images/fullgen-small.gif" border="0" alt="fullerenes options window"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        There is a button in the fullgen options window that deals with symmetries, 
+        it is labelled &quot;Symmetry Filter&quot;. Clicking it will bring up 
+        a new dialogue that presents you with 24 different symmetry groups, each 
+        named with a symbolic abbreviation used in chemistry. The buckyball's 
+        symmetry group is &quot;icosahedral symmetry&quot;, known as <i>Ih</i>. 
+        When the symmetry filter dialogue is brought up for the first time, all 
+        symmetry groups are selected (there is a button for each symmetry in the 
+        dialogue, and each of these will be pressed). By clicking the &quot;Clear 
+        all&quot; button and then the &quot;Ih&quot; button in the symmetry filter 
+        dialogue, the filter is changed and becomes active. Fullgen will still 
+        generate all 1812 C<font size="-2"><sub>60</sub></font> fullerenes, but 
+        the symmetry filter subroutine will discard every molecule whose symmetry 
+        group is not <i>Ih</i>, and so just one molecule -- the buckyball -- will 
+        be written to fullgen's output.</font></p>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/fullgen-symmetries.gif" target="_blank" onClick="return imageWindow (this, 900, 500, 'fullerenes options -- symmetry filter');"><img height="54" width="100" src="Images/fullgen-symmetries-small.gif" border="0" alt="fullerenes options -- symmetry filter"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        <a name="ipr"></a>The buckyball has another feature of interest in chemistry. 
+        As mentioned before, its rings are connected just like a football is stitched 
+        together from hexagonal and pentagonal leather patches. (That's soccer 
+        football in case you were wondering.) Looking at a (black) pentagon patch 
+        on such a football, you willl see that it is surrounded by (white) hexagon 
+        patches, not touching any other pentagon. Mathematical chemists say that 
+        the football follows the &quot;<b>isolated pentagon rule</b>&quot; (ipr). 
+        You can restrict fullgen to generate only molecules conforming to <i>ipr</i> 
+        by clicking the respective checkbox in its options window. Unlike the 
+        symmetry filter, the <i>ipr</i> option will affect fullgen's operation 
+        at an early stage so that generation time will be significantly smaller: 
+        fullgen won't generate all 1812 C<font size="-2"><sub>60</sub></font> 
+        fullerenes if it knows that only the subset defined by <i>ipr</i> is requested. 
+        It turns out that the buckyball is the only <i>ipr</i>-compliant C<font size="-2"><sub>60</sub></font> 
+        isomer.</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Another option 
+        for fullgen will cause it to output the <a href="definitions.html#dual">dual</a> 
+        of every graph it has generated. As fullerenes are <a href="definitions.html#regular">3-regular</a> 
+        graphs (each atom has bonds to three other atoms), the dual graph is a 
+        <i>triangulation</i> (all its faces are triangles).</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Fullerenes 
+        have become immensely popular, and their discovery was rewarded with the 
+        1996 Nobel Prize in chemistry. Here are some links. (Each will open in 
+        a new browser window.)</font></p>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+      <ul>
+        <li>Nobel Prize in Chemistry 1996 -- <a href="http://www.nobel.se/chemistry/laureates/1996/illpres/" target="_blank">press 
+          presentation</a> from the official site, with information on and Nobel
+          Lectures by the three laureates, Robert Curl, Harold Kroto, and Richard
+          Smalley.</li>
+        <li><a href="http://www.mpi-stuttgart.mpg.de/andersen/fullerene/intro.html" target="_blank">A 
+          brief history of C<font size="-2"><sub>60</sub></font></a> -- a nice 
+          presentation giving lots of cultural background and some curiosities. 
+        </li>
+        <li>Two more scientific documents: &quot;<a href="http://www.insite.com.br/rodrigo/bucky/buckyball.txt" target="_blank">An 
+          Excruciatingly Researched Report</a>&quot; from a private chemistry 
+          page and <a href="http://www.ch.ic.ac.uk/motm/c60.html" target="_blank">this</a> 
+          introduction from the &quot;Molecule of the Month&quot; site of Imperial 
+          College, London.</li>
+      </ul>
+      </font> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">The fullerenes 
+        generator was written by Gunnar Brinkmann; the underlying mathematical 
+        research was a collaboration with Andreas Dress. For more information and
+        as a scientific reference, see</font></p>
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+      <ul>
+        <li><a href="http://www.sciencedirect.com/science?_ob=GatewayURL&_method=citationSearch&_uoikey=B6WH3-45M8Y29-12&_origin=SDEMFRHTML&_version=1&md5=3782b633163738806049250cb3f6b85a" target="_blank">A 
+          Constructive Enumeration of Fullerenes</a>, Journal of Algorithms,
+          Volume 23, Issue 2, May 1997, Pages 345-358, Gunnar Brinkmann and
+          Andreas W. M. Dress.
+        </li>
+      </ul>
+      </font> 
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <img height="48" width="46" src="Images/football.gif" alt="a football"></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="generators.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b>Choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="output.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Output 
+            Options</b></font></a></font></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="tubetypes.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="tubetypes"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            Tubetypes generator</b></font></a></font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/fullerenes";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

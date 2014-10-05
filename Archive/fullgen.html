@@ -1,0 +1,203 @@
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="graph_gen.html"><strong>Generation programs</strong></a>
+Next : <a href="tubetype.html"><strong>Tubetype</strong></a>
+<h1 align=center> CaGe V0.3
+<HR></h1><h3>Fullgen</h3>
+
+<strong>Fullgen</strong> is a generation program which generates fullerenes. Fullerenes
+are spherically shaped molecules built of carbon atoms where every carbon
+atom has bonds to exactly three other carbon atoms so that each carbon ring
+consists of either five atoms (pentagon) or six atoms (hexagon). Unlike other 
+fullerene generators, <strong>fullgen</strong> generates complete lists and it is 
+currently the fastest fullerene generator. The generation of all fullerenes
+with 60 atoms takes less than one minute.
+
+The number of vertices (atoms) can be selected by two sliders named 
+"Minimal number
+of vertices" and "Maximal number of vertices". If the 
+"Min=Max"--checkbutton is not switched on, then these two sliders can have
+different values.
+
+
+The following description of the <strong>output options</strong> holds for all graph 
+generation programs:
+<dir>
+<li><strong>3D representation:</strong><br><br> 
+<center><img src="Img/3d.gif"></center>
+Exactly if this checkbutton is switched on, then 
+ three--dimensional embeddings will be generated (using <strong>spring</strong>). 
+ Where these embeddings are sent to depends on which of the radiobuttons
+ named "RasMol", "GeomView" or "File" is switched on. If you switch on
+ the checkbutton, "RasMol" will be taken per default. But you can as well
+ choose the output direction by directly selecting a radiobutton. The
+ checkbutton will then be switched on automatically. The only possibility
+ to prevent 3D embeddings is to switch off the checkbutton.
+ <dir>
+ <li><strong>RasMol:</strong>
+ The 3D representation will be sent to <strong>RasMol</strong> (if provided on your 
+   computer).
+ <li><strong>GeomView:</strong>
+ The 3D representation will be sent to <strong>GeomView:</strong> 
+(if provided on your
+   computer).
+ <li><strong>File:</strong> The 3D representation will be sent to a file.
+ The file will
+ contain data in <strong>writegraph3d</strong> code (see section 
+<a href="codes.html"><strong>Codes
+</font></a></strong>
+for description). The name of the
+ file can be entered in the "Filename"--entry below. However, if the 
+ "automatic"--checkbutton is switched on, then the filename will be 
+ determined automatically. It is a good choice to let CaGe determine the
+ filename, for two reasons: The first is that CaGe considers all options
+ used while building the filename. So by having a look at the name of a file
+ you know how its contents were 
+ generated. The second reason is that CaGe  
+ chooses the same filename that <strong>fullgen</strong> would if you generated the
+ fullerenes without using CaGe (the only difference is that CaGe adds
+ the suffix ".3d"). So the filenames are consistent. Now,
+ because it is such a good idea to let CaGe determine the filename, 
+ CaGe automatically invokes the "automatic"--checkbutton if you switch
+ on the "File"--radiobutton. If you want to choose the filename by yourself,
+ then you should just enter the filename entry. In this case CaGe assumes
+ that you want to store 3D embeddings in a file, so it switches on the 
+ "File"--radiobutton automatically. Furthermore, the
+ "automatic"--checkbutton is switched off.
+</dir>
+<li><strong>2D representation:</strong><br><br>
+<center><img src="Img/2d.gif"></center>
+ Exactly if this checkbutton is switched on, then
+ two--dimensional embeddings will be generated (using <strong>schlegel</strong>).
+ Where these embeddings are sent to depends on whether the "Display" or the
+ "File"--radiobutton is switched on. The behaviour of the checkbutton and the
+ radiobuttons is the same as for 3D representation. The same holds for the
+ filename (here the suffix ".2d" instead of ".3d" is added).
+ It is possible to generate 2D and 3D embeddings simultaneously. However, it is
+ not possible to direct one of these representations into a file and the other
+ one onto the display. So if these two directions collide, then CaGe will
+ switch off one representation checkbutton. If the 2D embeddings are sent to
+ a file, then this file will contain data in <strong>writegraph2d</strong> code.
+<li><strong>Adjacency information:</strong> <br><br>
+<center><img src="Img/adj.gif"></center>
+Exactly if this checkbutton it switched on, then
+ pure adjacency information will be generated. Where this information is sent
+ to depends on whether the "File" or the "Pipe"--checkbutton is 
+ switched on (both can be switched on simultaneously). If the information is
+ sent to a file, then for the name of the
+ file the same holds as for the 3D representation (no suffix will be added).
+ If the information is sent to a pipe, then the "Program call"--entry must
+ contain a program call, i.e. a program name and --- if needed --- some 
+ options. An example of a program call is "cat". This program takes the 
+ adjacency information as input and writes it to the standard output channel.
+ 
+ There are two different codes in which the adjacency information can be
+ represented: <strong>writegraph2d</strong> and <strong>planar_code</strong>. 
+See section
+<a href="codes.html"><strong>Codes
+</font></a></strong>
+for a description. 
+Which code is chosen depends on which of the
+ related radiobuttons is switched on. Default is <strong>writegraph2d</strong>
+ since it is an ASCII code.
+</dir>
+<br><br>
+
+<strong>Widget interactions:</strong> You have seen that there are several widget 
+interactions. There are various reasons for them:
+<dir>
+<li><strong>Inferences:</strong> If you select a widget which provides a special option,
+then CaGe automatically sets all general options on which the special
+option depends. For example, if you enter the "Filename" entry for
+3D representation, then CaGe assumes that you want to generate 
+3D embeddings and send them to a file. So it automatically switches on the
+"File"--radiobutton and the "3D representation"--checkbutton.
+<li><strong>Group dependencies:</strong> This is the opposite to inferences. If a general
+ option is not invoked, then all related special options must not be invoked.
+For example, if you switch off the "3D representation"--checkbutton, then
+no 3D embeddings will be generated. So all radiobuttons and the 
+"automatic"--checkbutton are switched off (the "Filename"--entry could be
+cleared as well, but this is not done).
+<li><strong>Conflicts:</strong> Most of the widgets are not independent of each other. Not
+all combinations of options are allowed. So if a combination is not allowed,
+then the related widgets are changed. An easy example is that you cannot
+choose a filename by yourself and by CaGe simultaneously. So if you invoke
+a "Filename"--entry, the related "automatic"--checkbutton must be switched
+off. Another example is described above (see item "2D representation").
+Sometimes conflicts are prevented automatically by providing an appropriate
+widget type. For
+example, since it is not possible to direct 3D representations to
+<strong>RasMol</strong> and to <strong>GeomView</strong> and to a file simultaneously, 
+radiobuttons instead of checkbuttons are provided to direct the 3D output.  
+<li><strong>Defaults:</strong> This is a special case of group dependencies where the 
+special options to be chosen are not unique. In this case CaGe chooses
+default options. For example, if you switch on the 
+"3D representation"--checkbutton, then by default the output will be directed
+to <strong>RasMol</strong>. Another example: If you switch on a "File"--radiobutton,
+then by default the related "automatic"--button will be switched on.     
+</dir>
+These interactions basically concern the output options. However, conflicts
+may also occur using extra options or basic options, so there the related
+technique is used as well.
+<br><br>
+
+<strong>Extra options:</strong><br><br> 
+<center><img src="Img/extra.gif"></center>
+The following options are options which are rarely
+used. Some of them are so specific that you must know about the details of the
+generation program <strong>fullgen</strong>. Such options are not explained in detail.
+Instead the related option which you would have to use for a direct call of 
+<strong>fullgen</strong> is provided. It is enclosed in brackets "{" and "}".
+For a further description of such an option see the original manual of
+<strong>fullgen</strong>.
+<dir>
+<li><strong>IPR:</strong> If you switch on the "IPR"--checkbutton, only fullerenes with
+isolated pentagons are generated. An isolated pentagon is a pentagon which is
+surrounded only by hexagons.
+<li><strong>Dual output:</strong> If this checkbutton is switched on, then every generated
+fullerene is dualized before it is read by CaGe, i.e. every vertex becomes
+a face and every face becomes a vertex. The result of such a dualization is a 
+triangulation.
+<li><strong>Spiral statistics:</strong> {spistat}If you switch on this checkbutton, 
+then a statistics about the number of spirals in the generated fullerenes will
+be written to the logfile. In this case the minimum and the maximum number of
+vertices must be the same.
+<li><strong>Symmetry statistics:</strong> {symstat} If you switch on this checkbutton,
+then a statistics about the symmetries in the generated fullerenes will be
+written to the logfile. There are 28 different symmetry groups which can occur
+in a fullerene, named e.g. <strong>S <sub>i</sub>, C<sub>i</sub>, 
+C<sub>ih</sub> ...</strong>
+<li><strong>Symmetry filter:</strong> 
+<center><img src="Img/symmetry_filter_full.gif"></center>
+If you click this button, another window appears
+where you can filter fullerenes which have a certain symmetry. There are 28
+different symmetry groups. For every generated fullerene its symmetry group
+is determined. If the related checkbutton is switched on (i.e. the symmetry is
+<strong>valid</strong>), the fullerene will
+be sent to CaGe by <strong>fullgen</strong>, otherwise it will be dropped. By
+default, all symmetries are valid. If you change the default, the 
+"Symmetry filter"--button will be highlighted. Note that the restriction to
+some symmetries will not speed up the generation process. Only a simple filter
+is invoked. Except the checkbuttons,
+there are three more buttons inside the 
+"Symmetry filter for fullerenes"--window: By clicking "Clear all" you
+switch off all checkbuttons (after that, you should switch on at least one
+checkbutton), by clicking "Set all" you switch on all
+checkbuttons, by clicking "Done" you close the window. If you close the
+window, its contents remains valid. Closing the window is just good for
+decreasing the confusion arising by too many windows on the display.
+<li><strong>Select cases:</strong> 
+<center><img src="Img/select_cases_full.gif"></center>
+{case}The generation of fullerenes can be split into
+three disjoint parts (cases). By default, all cases are considered. If you
+restrict the generation to one case, the "Select cases"--button will be
+highlighted. By clicking "Done" you close the window. The selected case
+remains valid.
+</dir>
+<br><br>
+</body>
+</html>

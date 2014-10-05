@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>CaGe -- general plane graphs window</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The general plane graphs window</h1>
+    </td>
+    <td rowspan="6"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td>
+      <p> The intention of the <em> general plane graphs </em> window is to allow the user
+to generate plane 
+      graphs with relatively few restrictions. In fact the options that can be used here also
+allow to generate very restricted classes of graphs -- e.g. all planar cubic graphs with 
+maximum face size 6 -- but the very general generator used in this window will be very inefficient
+for strongly restricted classes.
+</p>
+<p>
+The possible restrictions in this window are
+
+	  <ul>
+		<li>a lower bound between 1 and 5 for the minimal degree </li>
+		<li>a lower bound between 1 and 3 for the connectivity </li>
+		<li>to generate only graphs with connectivity number the given lower bound </li>
+		<li>a lower and upper bound for the number of edges </li>
+	        <li>an upper bound for the face size </li>
+	  </ul>
+
+
+        </p>
+    </td>
+
+    <td><br>
+      <a href="Images/generalplane.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'A general plane graph embedded by TwoView');"><img height="268" width="300" src="Images/generalplane_small.png" border="0" alt="A general plane graph embedded by TwoView"></a></td>
+
+
+  </tr>
+
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="quadrangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            quadrangulations generators<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="quadrangulations"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="external.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="external"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the external generator window</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/polytopes";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

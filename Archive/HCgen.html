@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="graph_gen.html"><strong>Generation programs</strong></a>
+Next : <a href="CPF.html"><strong>CPF</strong></a>
+<h1 align=center> CaGe V0.3
+<HR></h1>  
+<h3>HCgen</h3>
+
+<strong>HCgen</strong> is a generation program which generates hydrocarbon structures.
+Each carbon atom has bonds to exactly three other atoms where these atoms are
+either carbon atoms or hydrogen atoms. Carbon atoms are always part of either
+pentagon or hexagon rings (compare section <a href="fullgen.html"><strong  >fullgen
+</font></strong></a>).
+<br><br>
+
+<strong>Basic options:</strong> 
+Choose the number of carbon atoms by using the slider
+"Number of C atoms" or the "C-Atom" entry. 
+Choose the number of hydrogen atoms by using the slider
+"Number of H atoms" or the "H-Atom" entry. 
+Choose the exact number of pentagon rings by using the
+slider "Number of pentagons" or the "Pentagons" entry.
+<br><br>
+<center><img src="Img/HCgen_input_ex1.gif"></center>
+ The three numbers interact so that not every
+combination is possible. Two of the three numbers determine
+the minimal and maximal number of the third. 
+CaGe shows these minimal and maximal numbers for the
+C-Atoms, the H-Atoms and the pentagons.
+Let us look at one example.<br><br>
+After we have choosen 60 C-Atoms and 5 Pentagons the input area looks this way :<br>
+<br>
+<center><img src="Img/HCgen_input_ex2.gif"></center>
+<br>
+This means :<br>
+<dir>
+<li><strong>12-16</strong> C-Atoms <strong>6</strong> H-Atoms  and  <strong>5</strong> 
+Pentagons are legal combinations.<br>
+<li><strong>60</strong> C-Atoms <strong>10-30</strong> H-Atoms and  <strong>5 </strong>
+Pentagons are legal combinations.<br>
+<li>and with <strong>60</strong> C-Atoms <strong>6</strong> H-Atoms no value of Pentagons 
+cause a legal combinations.<br>
+(this is indicated by negative min. and max. values or by a 
+min. value that is greater than the max. value).
+</dir>
+<br>
+The second case means that e.g. <strong>60</strong> C-Atoms <strong>10</strong>
+ H-Atoms and  <strong>5 </strong> Pentagons is a legal combinations. So we choose 
+<strong>10</strong> H-Atoms and the input area looks this way :<br>
+<br>
+<center><img src="Img/HCgen_input_ex3.gif"></center>
+An other illigal combination is the following<br><br> 
+<strong>60</strong> C-Atoms <strong>11</strong> H-Atoms and  <strong>5 </strong>
+Pentagons<br><br>
+The number of C-Atoms and the number of C-Atoms 
+have to be both even or odd,
+so we have to choose: <br><br>
+<strong>61</strong> C-Atoms <strong>11</strong> H-Atoms and  <strong>5 </strong>
+Pentagons<br>
+or<br>
+<strong>60</strong> C-Atoms <strong>10</strong> H-Atoms and  <strong>5 </strong>
+Pentagons<br>
+<br>
+If no error is indecated we can start the generation program by using the
+"Start"--button.<br><br>
+
+<strong>Output options:</strong> See section 
+<a href="fullgen.html"><strong  >fullgen
+</font></strong></a>.<br>
+<strong>Extra options:</strong> 
+The following options are options which are rarely used.
+<br><br> 
+<center><img src="Img/HCgenex.gif"></center>
+<dir>
+<li><strong>Isolated pentagons:</strong>  If this checkbutton is switched on, only 
+hydrocarbons with isolated pentagons are generated, i.e. no two pentagons share
+an atom.
+<li><strong>Include H atoms:</strong>  Exactly if this checkbutton is switched on, hydrogen
+atoms are included into the graphs. If hydrogen atoms are not included, then
+their positions can be uniquely determined by looking at atoms which have only
+bonds to two other atoms. The third bond is an implicit bond to a hydrogen
+atom. If hydrogen atoms are included, the size of the output becomes a bit 
+larger and the computation of 2D and 3D embeddings takes more time. Besides,
+2D output looks rather ugly.
+<li><strong>Peri--condensed:</strong>  If this checkbutton is switched on, no two carbon atoms
+which lie on the outer cycle must have bonds to each other except this bond 
+(represented by an edge) is itself part of the outer cycle.
+<li><strong>Maximum size of a gap:</strong>  A gap is a sequence of two or more carbon atoms
+on the outer cycle of the hydrocarbon which do not have bonds to a hydrogen
+atom. The maximum size of such a gap can be determined by this slider.
+</dir>
+</body>
+</html>
+
+

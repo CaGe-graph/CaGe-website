@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>CaGe -- the 4-regular plane graphs windows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The 4-regular plane graphs windows</h1>
+    </td>
+    <td rowspan="8"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td>
+      <p>
+4-regular plane graphs are plane graphs where every vertex has exactly 4 neighbours.
+      4-regular graphs are sometimes also called &quot;quartic&quot;
+      graphs.
+      There are 2 different interfaces that allow to further specify the class of graphs that shall be 
+ generated.</p>
+    </td>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td>
+	  <br>
+	  <h2>All face sizes allowed</h2>
+      <p>In this section one can generate 4-regular
+	  plane graphs with a given number of vertices. 
+Furthermore one of the following three properties must be chosen:</p>
+	  <ul>
+		<li>3-connected</li>
+		<li>4-edge-connected</li>
+		<li>3-connected and cyclically 6-edge connected</li>
+	  </ul>
+<p>
+A program for the generation of 4-regular plane graphs with 1- or 2-cuts will be future work.
+</p>
+    </td>
+    <td><br>
+      <a href="Images/4regallfaces.png" target="_blank" onClick="return imageWindow (this, 568, 530, '4-regular graph in TwoView');"><img src="Images/4regallfaces-small.gif" border="0" alt="4-regular graph in TwoView"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+	  <br>
+	  <h2>Quartic graphs with given face sizes</h2>
+	  <a name="givenfaces"></a>
+      <p>Just like for the case of <a href="trireg.html#givenfaces">cubic plane graphs with given face sizes</a>) you can specify which face sizes may occur in the generated graphs.</p>
+	  <p>The generator used in this part is designed for the case of relatively many face sizes 
+	  allowed and does not allow extra options. For the future a reimplementation
+  of the algorithm described in Discr. Appl. Math. 128, pages 541-554 is planned.
+ This will 
+be applied in the case of few face sizes allowed.
+</p>
+    </td>
+    <td><br>
+      <a href="Images/4reg_allowedfaces.png" target="_blank" onClick="return imageWindow (this, 637, 676, '4-regular graph in Rasmol');"><img src="Images/4reg_allowedfaces-small.gif" border="0" alt="4-regular graph in Rasmol"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="trireg.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            3-regular plane graphs windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="trireg"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="hydrocarbons.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="hydrocarbons"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            hydrocarbons windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/fourreg";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

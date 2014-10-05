@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>CaGe -- Background Tasks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666" onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1><font face="Verdana, Arial, Helvetica, sans-serif" size="4" color="#FFFFFF">Background 
+        Tasks</font></h1>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">CaGe runs 
+        two kinds of tasks &quot;in the background&quot;, both are tasks that 
+        can take a long time and require no user interaction (other than possibly 
+        to cancel them). These tasks are a) generation processes that use <a href="output.html#file_output">file 
+        output</a> rather than viewers, and b) the conversion of 3D embeddings 
+        to <a href="results.html#folding_nets">folding nets</a>. CaGe shows both 
+        of these in an extra &quot;background tasks&quot; window next to the windows 
+        CaGe uses for &quot;foreground activities&quot; (defining a new production 
+        process and controlling viewer output processes).</font></p>
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Some technical 
+        information for interested readers (skip this if you are not): Background 
+        tasks run within the same Java Virtual Machine as CaGe itself. Java uses 
+        <i>threads</i> for concurrent tasks, but these don't actually offer true 
+        multitasking; you may notice that the handling of background tasks is 
+        temporarily suspended while you engage in foreground activity. However, 
+        both kinds of background tasks involve separate <i>processes</i> (for 
+        the generators as well as the folding net converter) in which the main 
+        work is done, so CaGe can benefit from the operating system's multitasking 
+        capabilities. All that CaGe does is read those processes' output, a simple 
+        job for which there will often be sufficient time in between your foreground 
+        actions.</font></p>
+    </td>
+    <td rowspan="15"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        The background tasks window appears as soon as a background task starts, 
+        and it can not be closed as long as some background task is active. This 
+        screenshot shows the background tasks window displaying two file output 
+        tasks. Each of these has a number (one and two in this example) identifying 
+        it during the CaGe session. A finished background task may disappear from 
+        the background tasks window, but its number won't be reused within the 
+        same CaGe session. There is another field for each file output task which 
+        shows the task's progress, in terms of the number of graphs that have 
+        been generated and embedded.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/background-fileoutput.jpg" target="_blank" onClick="return imageWindow (this, 350, 300, 'Background Tasks window -- file output tasks');"><img height="77" width="100" src="Images/background-fileoutput-small.gif" border="0" alt="Background Tasks window -- file output tasks"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        Two interactions are possible with a file output task in the background 
+        tasks window. The &quot;stop&quot; button cancels the task. If you want 
+        to restart a stopped task, you must reschedule it using CaGe's options 
+        windows. And the task number is a button as well: if you click it, a dialogue 
+        will appear with some information about the background task. This screenshot 
+        shows such an information dialogue.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/background-taskinfo.jpg" target="_blank" onClick="return imageWindow (this, 400, 350, 'Background Tasks window -- file output task info');"><img height="78" width="100" src="Images/background-taskinfo-small.gif" border="0" alt="Background Tasks window -- file output task info"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        Folding net tasks are also displayed in the background tasks window, in 
+        the way shown in the third screenshot. <a href="results.html#folding_nets">Remember</a> 
+        that CaGe puts all folding net tasks into a queue. In this example, 8 
+        tasks have already passed through the queue, one of these has failed. 
+        Two further tasks are still in the queue. You can click the &quot;abort 
+        curr(ent)&quot; button if you feel that the first task in the queue is 
+        taking too long. The folding net generator can in fact fail after trying 
+        a number of ways of &quot;cutting open&quot; a 3D-embedded graph, and 
+        you might suspect that this is about to happen with the current folding 
+        net task. Tasks that have failed in any way, including those interrupted 
+        with the &quot;abort&quot; button, are counted in the &quot;failed&quot; 
+        category.</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/background-foldnets.jpg" target="_blank" onClick="return imageWindow (this, 400, 350, 'Background Tasks window -- folding net tasks');"><img height="77" width="100" src="Images/background-foldnets-small.gif" border="0" alt="Background Tasks window -- folding net tasks"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+        If you try to exit CaGe while a background task of any kind is still active, 
+        CaGe will warn you about this and ask what to do with the remaining tasks. 
+        The background tasks window will be displayed, along with a message and 
+        two extra buttons. The screenshot on the right shows an attempt to exit 
+        CaGe at a time when two generation processes with file output have in 
+        fact ended (one of them through the &quot;stop&quot; button), but the 
+        folding net queue is still active. You can now decide to exit anyway, 
+        killing all background tasks, by clicking the &quot;Exit&quot; button. 
+        You can also cancel your attempt to exit -- i.e. return to CaGe and continue 
+        working -- through the &quot;Cancel&quot; button. If you don't have any 
+        further work to do in the CaGe but want to wait for the background tasks 
+        to finish, just leave this window alone. As soon as the last background 
+        task has finished, CaGe will exit. If you have used any &quot;stop&quot; 
+        or &quot;abort&quot; buttons in the background window since the exit warning 
+        has appeared, the exit will not be automatic, instead you will have to 
+        click once more to decide whether to exit or cancel the exit (return to 
+        CaGe).</font></p>
+    </td>
+    <td><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><br>
+      <a href="Images/background-exit.jpg" target="_blank" onClick="return imageWindow (this, 650, 600, 'Background Tasks window -- waiting for exit');"><img height="77" width="100" src="Images/background-exit-small.gif" border="0" alt="Background Tasks window -- waiting for exit"></a></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="results.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#FFFFFF"><b>Viewing 
+            results<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="results"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="download.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="download"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Download</b></font></a></font></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><a href="rasmol.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);"><font color="#FFFFFF"><b>Rasmol, 
+            another 3D viewer<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="rasmol"></b></font></a></font></td>
+          <td nowrap width="100%" align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;&nbsp;</font></td>
+          <td align="left" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2">&nbsp;</font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "results/background";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

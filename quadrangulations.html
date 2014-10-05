@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>CaGe -- the quadrangulations windows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The quadrangulations windows</h1>
+    </td>
+    <td rowspan="6"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p>A quadrangulation is a plane graph with all faces quadrangles. 
+The Euler formula implies that all quadrangulations must have vertices with degree
+at most 3. Furthermore a simple quadrangulations with at least 4 vertices
+can not have vertices of degree 1.
+</p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <h2><br>General Quadrangulations</h2>
+      <p>
+
+      In this window you can generate quadrangulations without too strong restrictions efficiently.
+      The main invariant that has to be given is the number of vertices. Furthermore the generation
+has to be restricted to one of the
+	  following 4 classes: </p>
+	  <ul>
+		<li>quadrangulations with minimum degree 2 <br>
+		(for at least 4 vertices these are all simple 
+		quadrangulations)</li>
+		<li>quadrangulations with minimum degree 3</li>
+		<li>3-connected quadrangulations</li>
+		<li>3-connected quadrangulations without 4-cycles that are not the boundary of a face</li>
+	  </ul>
+    </td>
+
+    <td><br>
+      <a href="Images/cube.png" target="_blank" onClick="return imageWindow (this, 580, 552, 'A cube shown with Rasmol');"><img height="268" width="300" src="Images/cube_small.png" border="0" alt="A cube shown with Rasmol"></a></td>
+
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <h2><br>Quadrangulations with given vertex degrees</h2>
+      <p> Similar to 
+<a href="triangulations.html#triachosendeg">triangulations with given vertex degrees</a>,
+in this part you can choose the number of vertices and the set of allowed vertex degrees. 
+Furthermore you can give upper and lower limits for the numbers of vertices of each degree
+that must/may be present in the graph.</p>
+
+<p>
+
+The generator used at the moment is designed to work efficiently in case of relatively
+many allowed vertex degrees.  For the future a reimplementation
+  of the algorithm described in Discr. Appl. Math. 128, pages 541-554 is planned. This will 
+be applied in the case of few vertex degrees allowed.
+</p>
+
+    <td><br>
+      <a href="Images/quad_given_deg.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'A quadrangulation with given degrees');"><img height="268" width="300" src="Images/quad_given_deg_small.png" border="0" alt="A quadrangulation with given degrees"></a></td>
+
+
+
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="triangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            triangulations windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="tubetypes"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="polytopes.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="polytopes"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            general plane graphs windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/quadrangulations";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

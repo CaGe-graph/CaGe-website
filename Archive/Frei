@@ -1,0 +1,13 @@
+#! /bin/sh
+
+test $# -eq 0 && set -- .
+
+find "$@" -user `whoami` -print | grep -v "` basename $0 `\$" |
+while file="` line `"
+do
+   if [ -d "$file" ]
+     then chmod 711 "$file"
+     else chmod 644 "$file"
+   fi
+done
+

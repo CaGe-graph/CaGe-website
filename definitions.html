@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>CaGe -- Definitions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>Definitions: 
+        Molecules and Graphs</h1>
+      <p>CaGe is a 
+        mathematical software package that is intended to be a service to chemists 
+        as well as mathematicians. As the program deals with graphs on the mathematics 
+        side and molecules on the chemistry side, let us explain how the two concepts 
+        translate into each other. We will begin by introducing some simple terminology.</p>
+      <h1>Molecules</h1>
+      <p><b><a name="molecule"></a>Molecules</b> 
+        are, for the purposes of this program, collections of <b>atoms</b> linked 
+        by <b>bonds</b> to form fixed structures (not changing with time). CaGe's 
+        generators enumerate sets of molecules -- or to be exact 
+        <i> graphs that are models for molecules </i> -- 
+	that share certain properties given by the user, e.g. the 
+        same constituional formula and probably some additional properties.</p> 
+
+
+        <p>But all molecules that are generated differ in structure -- they are 
+        pairwise non-isomorphic. 
+        Reflecting, rotating or scaling a molecule or 
+        changing some bond angles or lengths does not count as a structural difference. 
+        The &quot;properties&quot; that can be chosen to be shared by a 
+	generated set of molecules  
+        depend on what type of molecules are to be generated and differ from generator to generator.</p>
+      <h1>Graphs (embeddings, dual graphs)</h1>
+      <p><b><a name="graph"></a>Graphs</b> 
+        are very simple mathematical objects. They consist of <b>vertices</b> 
+        (or nodes) and <b>edges</b> (or connections). If two vertices are connected 
+        by an edge they are said to be <b>adjacent</b>. Actually, the term &quot;adjacent&quot; 
+        can be applied to any pair of graph constituents -- any combination of 
+        two vertices, edges, or faces (see below) -- if they are &quot;next to&quot; 
+        each other.</p>
+      <p><a name="valency"></a>The 
+        number of edges starting at a vertex (or the number of adjacent vertices) 
+        is the <b>valency</b> or <b>degree</b> of that vertex. A node with valency 
+        <i>n</i> is said to be <i><b>n</b></i><b>-valent</b>. <a name="regular"></a>A 
+        graph is called <i><b>n</b></i><b>-regular</b> if every vertex is <i>n</i>-valent. 
+        Some of our generators specialize in producing regular graphs.</p>
+      <p><a name="embedding"></a>At 
+        this level, a graph represents the information that chemists sometimes 
+        call the <b>connection table</b> of a molecule. For a visual representation, 
+        we also need to assign (2D or 3D) coordinates to our vertices, this is 
+        known as an <b>embedding</b> of the graph (into 2D or 3D space). The edges 
+        are then drawn as arbitrary curves between the vertices (straight line 
+        segments are preferred, but not required). A graph with an embedding is 
+        sometimes called a <b>map</b>.</p>
+      <p><a name="planar"></a>When 
+        a graph is to be drawn on paper, it is desirable to draw the edges so 
+        that they don't cross each other. If this is possible (the graph has a 
+        2D embedding that permits intersection-free edge drawing), the graph is 
+        said to be <b>planar</b>. (Note that the term &quot;planar&quot; exists 
+        in chemistry as well, but with a different meaning.) The condition of 
+        planarity is fulfilled for all the molecule types that we currently generate. 
+        Looking at a drawing of a graph with more or less straight edges, you 
+        will perceive <b>faces</b> as well as edges and vertices. A face is a 
+        2D region bounded by some of the graph's edges. (Don't forget the one 
+        face defined by the &quot;outside&quot; of the graph.) Depending on the 
+        number of edges bounding it, a face can be a triangle, quadrangle, pentagon, 
+        hexagon, and so on. The number of bounding edges is the face's <b>size</b>. 
+        (If you must travel along some edge twice when going around a face, that 
+        edge counts twice.)</p>
+    </td>
+    <td rowspan="4"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+    <td valign="bottom"><a href="Images/graph-faces.gif" target="_blank" onClick="return imageWindow (this, 252, 300, 'a planar graph with face sizes');"><img height="119" width="100" src="Images/graph-faces-small.gif" border="0" alt="a planar graph with face sizes"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p><br>
+        <a name="dual"></a>Picture a planar graph with its vertices, edges and 
+        faces. You can then obtain a new graph, the <b>dual</b> of the original 
+        graph, as follows: First create a new (dual) vertex in the interior of 
+        each face of the original graph. For each original edge, find the faces 
+        bounded by that edge and connect the dual vertices inside them by a new 
+        (dual) edge, crossing the original one. (You may have the same original 
+        face on both sides of the edge; this will create a &quot;loop&quot; edge, 
+        starting and ending at the same dual vertex. You may also find two faces 
+        having more than one edge in common; the dual will then have two edges 
+        starting and ending at the same vertices, such a graph is called a &quot;multi-graph&quot;. 
+        Our embedders will not handle loop edges or multi-graphs, and CaGe will 
+        not allow our generators to produce them, not even as duals.)<br>
+        <i>Dualizing exchanges vertex degree and face size:</i> The degree of 
+        each dual vertex is clearly equal to the size of the corresponding original 
+        face: each edge bounding the original face creates a dual edge starting 
+        at the dual vertex. Likewise, a dual face's size is equal to the degree 
+        of the corresponding original vertex: observe how the dual graph's faces 
+        form around the original vertices, bounded by those dual edges that cross 
+        the original edges starting at the original vertex. <i>The number of edges 
+        remains unchanged.</i> (This follows directly from the way a dual graph 
+        is defined.) <br>
+        Constructing the dual of the dual graph gives you back the original graph. 
+        (Vertex positions will probably have shifted, but that only changes the 
+        embedding, not the graph.)</p>
+      <p><a name="k_connected"></a>A 
+        graph is called <i><b>k</b></i><b>-(vertex)-connected</b> if one must 
+        remove at least <i>k</i> vertices in order to separate the graph into 
+        disconnected parts. If <i>k</i> vertices are also &quot;enough&quot; to 
+        separate the graph (there is some set of <i>k</i> vertices that, when 
+        removed, achieves the separation), we say the graph is <b>exactly <i>k</i>-connected</b>. 
+        The number <i>k</i> is then called the <b>connectivity</b> of the graph. 
+        (Removing a vertex implies removing all edges adjacent to it.)</p>
+      <h1>Translating Molecules into Graphs</h1>
+      <p><a name="translating"></a>An 
+        atom in chemistry is represented by a vertex in graph theory. A bond between 
+        two atoms is represented by an edge. We represent a double or triple bond 
+        by a single edge (multi-graphs are not allowed), and there is no extra 
+        information attached to edges. Therefore, bond order (whether a bond is 
+        single, double, or triple) is not represented in our graphs.</p>
+      <p>As a consequence, 
+        an atom's chemical valency might not be equal to the &quot;graph valency&quot; 
+        (or degree) of the corresponding vertex. For example, the degree of a 
+        carbon atom might be less than 4, since double bonds are only counted 
+        once. We do however use the degree of a vertex to find the corresponding 
+        atom's type (we also need to use our knowledge of the kind of molecule 
+        we are generating, which narrows down the choice of atom types to just 
+        one or two for most generators).</p>
+    </td>
+    <td><br><a href="Images/dual-graph.gif" target="_blank" onClick="return imageWindow (this, 300, 372, 'a planar graph and its dual');">
+	<img height="124" width="100" src="Images/dual-graph-small.gif" border="0" alt="a planar graph and its dual"></a></td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding="0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="welcome.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><b>Welcome<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="welcome"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="generators"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">Choosing 
+            a Generator</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

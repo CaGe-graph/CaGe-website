@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>CaGe -- the Triangulations generator</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+<script language="JavaScript" src="subwindow.js">
+</script>
+</head>
+<body onUnload="closeSubwindow ();">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>The triangulations generators</h1>
+    </td>
+    <td rowspan="6"><img height="1" width="20" src="Images/trans.gif" alt=""></td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p>A triangulation of the plane - or equivalently of the sphere -
+        is a plane graph with all faces triangles. Because these triangulations are the
+most common ones, they are simetimes just called &quot;triangulation&quot; without explicitly
+mentioning the sphere or plane.
+There is also one window to generate triangulations of the disk. In this window
+there is one distinguished outer face - the outside of the disk - that need not be a triangle.
+
+For a lot of these structures the current - chemically oriented - 3D-embedders do not produce nice
+pictures. Writing specialized embedders for these structures will be future work.
+
+
+ </p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <h2><br>General Triangulations</h2>
+      <p>In this window you can 
+        generate triangulations without too many restrictions very efficiently. 
+	The number of vertices, the 
+        minimum degree of the vertices, and a lower bound for the <a href="definitions.html#k_connected">connectivity number</a> must be given. Due to the Euler formula and the fact that the graphs are simple the only
+possible values for the connectivity number of a triangulation with at least 4 vertices are 3,4, and 5.
+
+As an option one can choose to only generate graphs with connectivity number exactly the lower bound.
+</p>
+    </td>
+    <td><br>
+      <a href="Images/triangulation.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'A general triangulation');"><img height="268" width="300" src="Images/triangulation_small.png" border="0" alt="A general triangulation"></a></td>
+  </tr>
+
+
+  <tr valign="top"> 
+    <td> 
+      <h2><br>Eulerian Triangulations</h2>
+      <p>A graph is called Eulerian if it admits an Euler-tour - that is a closed walk using
+each edge exactly once. Such a closed walk exists if and only if the degree of every vertex is
+even.
+
+The number of vertices must be chosen, but due to the Euler formula the minimum degree of a simple triangulation with at least 4 vertices is always 4 - so no choice is possible. The connectivity number can be 3 or 4
+and it is possible to choose a lower bound or the exact value of the connectivity number of the graphs 
+generated.
+
+</p>
+    </td>
+    <td><br>
+      <a href="Images/eulertria.png" target="_blank" onClick="return imageWindow (this, 568, 530, 'A Eulerian triangulation');"><img height="268" width="300" src="Images/eulertria_small.png" border="0" alt="A Eulerian triangulation"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+    <td> 
+ <a name=triachosendeg></a>
+      <h2><br>Triangulations with given vertex degrees</h2>
+      <p>In this window you can generate triangulations in which the vertices have degrees out of
+some given list.
+	  The required parameters are the number of vertices and a list of allowed degrees.
+	  Optionally lower and upper bounds for the number of vertices for each degree can
+	  be specified.</p>
+    </td>
+    <td><br>
+      <a href="Images/triagchosendeg.png" target="_blank" onClick="return imageWindow (this, 550, 515, 'A triangulation with given vertex degrees');"><img height="268" width="300" src="Images/triagchosendeg_small.png" border="0" alt="A triangulation with given vertex degrees"></a></td>
+  </tr>
+
+  <tr valign="top"> 
+    <td> 
+      <h2><br>
+        Triangulations of the Disk</font></h2>
+      <p>
+      Triangulations of the disk have a distinguished outer face - the outside of the disk - which
+is not required to be a triangle. Isomorphisms must map these distinguished outer faces onto
+each other.
+In cases where the distinguished face is larger than a triangle, two 
+triangulations of the disk are isomorphic as plane graphs if and only if they
+are isomorphic as triangulations of the disk. In cases where the outer face is a triangle, it is possible
+that several isomorphic plane graphs are generated -- but there will be no isomorphisms mapping
+the distinguished faces of different graphs onto each other. In order to emphasize this important role of the
+distinguished face, it is always displayed as the outer face in the 2D-drawings.
+</p>
+<p>
+The number of vertices of the triangulation of the disk must be given. Furthermore
+it is possible to 
+
+	  <ul>
+		<li>fix the size of the distinguished face</li>
+		<li>allow, forbid, or even require chords (that is: edges not in the boundary of the distinguished face but connecting vertices in the distinguised face)</li>
+<li> allow and forbid 2-valent vertices in the boundary. Note that 2-valent vertices not in the
+boundary are not possible for simple triangulations of the disk.   </li>
+	  </ul>
+</p>
+    </td>
+
+    <td><br>
+      <a href="Images/triagdisk.png" target="_blank" onClick="return imageWindow (this, 568, 523, 'A triangulation of the disk');"><img height="268" width="300" src="Images/triagdisk_small.png" border="0" alt="A triangulation of the disk"></a></td>
+
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <h2><br>
+        Further Links</h2>
+      <ul>
+        <li>Stuart Anderson has used plantri and later CaGe to generate graphs 
+          for his collection of <a href="http://www.squaring.net/" target="_blank">Squared 
+          Rectangles</a>.</li>
+      </ul>
+      <p>The mathematics 
+        and implementation of plantri are a collaboration between Gunnar&nbsp;Brinkmann 
+        and Brendan D. McKay, who distributes the &quot;naked&quot; generator 
+        <a href="http://cs.anu.edu.au/~bdm/plantri/" target="_blank">on his website</a>.</p>
+    </td>
+    <td><br>&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="generators.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">choosing 
+            a generator window<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="generators"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="output.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" width="6" height="11" border="0" alt="&gt;" name="output"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">output 
+            options</a></td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="tubetypes.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">the 
+            tubes and cones windows<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="tubetypes"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap><a href="quadrangulations.html" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation"><img src="Images/pointer-passive.gif" id="selecting" width="6" height="11" border="0" alt="&gt;" name="quadrangulations"><img src="Images/trans.gif" width=5 height=1 border="0" alt=" ">the 
+            quadrangulations windows</a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+document.select_contentName = "generators/triangulations";
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

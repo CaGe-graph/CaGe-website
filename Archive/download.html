@@ -1,0 +1,233 @@
+
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="internal.html"><strong>Internal constants</strong></a>
+
+<div align=center>
+<h1 align=center> CaGe V0.3</h1>
+
+<hr>
+
+<h3 align=center>Download CaGe Source Releases:</h3>
+
+<font size=-1>
+<a href="CaGe.tar.gz"><b>CaGe.tar.gz</b></a>
+<p>
+
+Development release with CGF and "folding net" utility:
+<br>
+<a href="CaGe+cgf+mkfoldnet.tar.gz"><b>CaGe+cgf+mkfoldnet.tar.gz</b></a>
+<p>
+
+Older releases:
+<br>
+<a href="Archive/"><b>Archive</b></a>
+<p>
+</font>
+
+gunzip CaGe.tar.gz
+<p>
+
+<font size=-1><b><a href="CaGe.tar.Z">CaGe.tar.Z</a></b></font>
+<p>
+
+uncompress CaGe.tar.Z
+<p>
+
+tar xf CaGe.tar CaGe
+
+<p>
+<hr>
+<p>
+
+libtcl8.0.so  libtk8.0.so
+<p>
+
+<font size=-1><b>
+<a href="libtcl8.0.so">libtcl8.0.so</a>
+<p>
+
+<a href="libtk8.0.so">libtk8.0.so</a>
+<p>
+
+<a href="tk8.0.h">tk8.0.h</a>
+<p>
+
+<a href="tcl8.0.h">tcl8.0.h</a>
+<p>
+
+<a href="init.tcl">init.tcl</a>
+<p>
+
+<a href="ldAout.tcl">ldAout.tcl</a>
+</b></font>
+
+<h3 align=center>  Download Tcl/Tk Source Releases:
+</h3>
+<font size=-1><b><a href="http://sunscript.sun.com/TclTkCore/8.0.html">Tcl/Tk 8.0</a></b></font>
+<p>
+
+Online manual:  
+<p>
+
+<font size=-1><b><a href="http://sunscript.sun.com/man/">Tcl/Tk Manual</a></b></font>
+
+<p>
+<hr>
+
+<h3 align=center>  Download RasMol Source Releases:
+</h3>
+
+<font size=-1><b><a href="http://www.umass.edu/microbio/rasmol/getras.htm#rasmanual">RasMol</a></b></font>
+<p>
+
+RasMol manual:
+<p>
+
+<a href="http://www.umass.edu/microbio/rasmol/distrib/rasman.htm#go_interprocess"><font size=-1><b>RasMol Manual</a></b></font>
+
+<p>
+<hr>
+<p>
+</div>
+
+<h3 align=center>Getting started</h3>
+To create the cage program, you need to have the following files in
+one directory:<br>
+<center>
+-  cage.c<br>
+-  spring.c<br>
+-  schlegel.c<br>
+-  fullgen.c<br>
+-  HCgen.c<br>
+-  makefile<br>
+</center>
+<br>
+The program is compiled by entering this directory and typing<br>
+<br>
+<center>  make cage<br></center>
+<br>
+However, some include files and some libraries are needed which must be 
+installed somewhere on your computer. These are the files<br>
+<br>
+<center>
+ tcl.h<br>
+ tk.h<br>
+ libX11.a<br>
+ libtcl.so<br>
+ libtk.so<br>
+</center>
+<br>
+If these files are not stored in the default directories for include
+files and libraries (normally "/usr/include" and "/usr/lib"), then you
+must provide the paths to the directories in which the files can be found.
+This is done in the makefile.
+In the current version of the makefile, two examples are given:<br>
+<br>
+
+# for SGI:<br>
+TCLINCLUDE = /vol/local/include<br>
+TCLLIB     = /vol/local/lib<br>
+X11LIB     = /usr/lib<br>
+
+# for Linux:<br>
+#TCLINCLUDE = /vol/X11/include<br>
+#TCLLIB     = /vol/X11/lib<br>
+#X11LIB     = /usr/lib<br>
+
+<br>
+The "#" at the beginning of a line indicates that the line is a comment.
+So in this example "/vol/local/include" is the directory in which the files 
+"tcl.h" and "tk.h" are searched for and "/vol/local/lib" and "/usr/lib" are
+the directories in which the files "libX11.a", "libtcl.a" and "libtk.a" are
+searched for. 
+Change the path specifications so that they fit to your system. Then type
+"make cage".<br>
+<br>
+Once the program "cage" is created, you can start it by typing<br>
+<br>
+<center>cage </center><br>
+<br>
+<h3 align=center> Some problems </align></h3><br>
+<br>
+<strong>1) Shared libraries:</strong><br>
+<br>
+Tcl uses shared libraries. Therefore, e.g. under Linux,
+the option -ldl is sometimes also required in the makefile.<br> 
+<br>
+cage : cage.c fullgen HCgen spring schlegel tubetype CPF<br>
+	cc -o cage cage.c -I$(TCLINCLUDE) -L$(TCLLIB) -L$(X11LIB) \<br>
+           -lm -ltcl -ltk -lX11 -ldl <strong> <-- </strong><br>
+<br>
+Otherwise you get the
+error message:<br> 
+<br>
+/vol/X11/lib/libtcl.so: undefined reference to `dlerror'<br>
+/vol/X11/lib/libtcl.so: undefined reference to `dlopen'<br>
+/vol/X11/lib/libtcl.so: undefined reference to `dlsym'<br>
+<br>
+<strong>2) Tcl and Tk versions:</strong><br>
+<br>
+Tcl and Tk versions are not very compatible. The actuell
+version of CaGe requires Tcl 8.0 and Tk 8.0. 
+To know which version is installed, type:<br>
+<br>
+  wish<br>
+  % put $tcl_version<br>
+  8.0<br>
+  % put $tk_version<br>
+  8.0<br>
+<br>
+If you are trying to run CaGe under Tcl 7.6 and Tk 4.2,
+CaGe will work fine until you start one of the generating 
+programs and it will then cause an error:<br>
+<br>
+  Segmentation fault.
+<br>
+<h3 align=center>Some hints for usage </align></h3><br>
+<br>
+We hope that the usage of cage is self-explaining. However, here are
+some hints:<br>
+<br>
+- The window with the "Quit" button and the "Go to background" button
+  always remains on the screen as long as neither of these buttons is
+  pressed. By pressing the "Quit" button, you can exit the program.
+  By pressing the "Go to background" button, you can do the same, but
+  if there is one graph generation process running, it will not be 
+  cancelled. It will continue in the background.<br>
+<br>
+- After choosing a generation program, an option window appears.
+  Some of the options are included into a box named "extra options".
+  These options are only important for users who know the generation
+  program very well. 
+  By pressing "Start", the graphs are generated.
+  By pressing "Cancel", you return to the window where you can choose
+  another generation program.<br>
+<br>
+- If you choose 3D output, then "cage" pipes this output to other
+  programs. Two possibilities are offered:<br>
+<br>
+<center>
+  - RasMol<br>
+  - GeomView<br>
+</center>
+<br>
+  You can only use these options if the relative programs are installed to
+  your system! Otherwise cage will cause an error. Furthermore, these
+  programs must be executable just by typing their names ("rasmol" or
+  "geomview", respectively) without any additional path information.
+  If you use RasMol, then you must move the mouse inside the RasMol window
+  after it appears on the screen. If you use GeomView, then notice that
+  GeomView is not quitted automatically if you quit cage. You must
+  quit it yourself. Furthermore, a pipe program named "togeomview" must
+  be provided.<br>
+<br>
+<HR>
+If you have problems with the installation, contact
+<a href="mailto:lisken@Mathematik.Uni-Bielefeld.DE">Sebastian Lisken</a>.
+  </body>
+</html>  

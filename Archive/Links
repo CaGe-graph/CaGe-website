@@ -1,0 +1,2 @@
+perl -nwe ' if (m{(href|src) *= *"?([^ "]+)"?}i) { print "$2\n"; } '  *.html |
+sort -u | more

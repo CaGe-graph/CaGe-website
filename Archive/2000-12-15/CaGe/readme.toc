@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Tutorial --- Tour de CaGe}{1}
+\contentsline {section}{\numberline {3}Main program loop and external programs}{5}
+\contentsline {section}{\numberline {4}The graph generation programs}{6}
+\contentsline {subsection}{\numberline {4.1}\textit {Fullgen}}{6}
+\contentsline {subsection}{\numberline {4.2}\textit {Tubetype}}{8}
+\contentsline {subsection}{\numberline {4.3}\textit {HCgen}}{9}
+\contentsline {subsection}{\numberline {4.4}\textit {CPF}}{10}
+\contentsline {subsection}{\numberline {4.5}\textit {Input file}}{11}
+\contentsline {section}{\numberline {5}Codes}{11}
+\contentsline {section}{\numberline {6}Internal constants}{14}

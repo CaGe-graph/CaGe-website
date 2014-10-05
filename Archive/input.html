@@ -1,0 +1,109 @@
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="graph_gen.html"><strong>Generation programs</strong></a>
+Next : <a href="rasmol.html"><strong>Rasmol</strong></a>
+
+<h1 align=center> CaGe V0.3
+<HR></h1>  <h3>Input file</h3>
+"Input file" is <strong>not</strong> a generation program. If you choose this option,
+then the graph data will be read from a file instead. However, this case can 
+be treated like a generation process since it doesn't matter where the graphs
+come from.
+
+There are several codes which are used to store graphs. Not every code is
+understood by CaGe. The codes which are understood by CaGe are exactly
+the codes which can be written by CaGe, namely <strong>planar_code</strong>,
+<strong>writegraph2d</strong> and <strong>writegraph3d</strong>{See section
+<a href="codes.html"><strong>codes</strong>
+</font></a>for a brief description}. If the input file contains a different
+code, then CaGe will do nonsense. If the input file contains one of the
+three codes mentioned, then CaGe will recognize automatically which code
+is contained in the file.
+<strong>Input options:</strong> 
+<dir>
+<li><strong>Input filename (entry):</strong>  
+The name of the input file is necessary. You can type
+it into the related entry e.g. Full_codes_60.3d.<br><br>
+<center><img src="Img/input_ex_entry.gif"></center>
+<li><strong>Input filename (button):</strong>
+An other way to get the input file is to use the "Files"--button.  
+This causes that CaGe shows all files in the current directory, which contain
+planar_code, writegraph2d or writegraph3d codes
+{See section
+<a href="codes.html"><strong>codes</strong>
+</font></a>for a brief description}.<br><br>
+<center><img src="Img/input_ex_button.gif"></center>
+<br>
+The files are shown in the left side of the "Files"--window and can be selected
+be a double-click. After selecting e.g the Full_codes_60.3d file you can go on
+by using the "Start"--button, or delete, rename or copy the selected file.   
+</dir>
+<center><img src="Img/input_ex_win.gif"></center>
+<dir>
+<li><strong>Pipe:</strong>
+You can also use CaGe to display the output of external generation programs, 
+which use <strong>planar_code</strong>,
+<strong>writegraph2d</strong> or <strong>writegraph3d</strong>
+codes for the output {See section
+<a href="codes.html"><strong>codes</strong></font></a> for a brief description}.
+This is done by "piping". First of all you have to use the "Pipe"--radiobutton:
+<br><br>
+<center><img src="Img/select_pipe.gif"></center>
+<br>
+Now we need a program to pipe.
+For example the program planrti requires a number of atoms as an argument 
+ and derives all triangulated graphs with this number of atoms.
+So a correct program call of plantri is e.g. :<br><br>
+<strong>plantri 12</strong><br>
+<br> 
+<center><img src="Img/select_pipe_name.gif"></center>
+<br>
+After starting you can use CaGe in the usual way, and get such triangulated graphs: <br><br>
+<center><img src="Img/plantri.gif"></center>
+</dir>
+The following input options are important only if you wish to output embedded
+graphs (on the display or into a file). They determine where to get the
+embeddings from. 
+<br><br>
+<center><img src="Img/inputex.gif"></center>
+<dir>
+<li><strong>Use old embedding:</strong>  If the input file contains embedding information,
+i.e. information about the
+coordinates of the vertices (atoms), then this information is used exactly if
+the "Use old embedding"--checkbutton is switched on. If the input file does
+not contain coordinates, then this checkbutton has no meaning.
+<li><strong>Re--embed :</strong> If this checkbutton is switched on, then every graph will
+be re--embedded (using <strong>spring</strong> and/or <strong>schlegel</strong>) before it will
+be shown or written into a file. 
+</dir>
+If the input file does not contain embedding information, then CaGe will
+call the embedding programs even if the "Re--embed"--checkbutton is not
+switched on. This includes the case that the input file contains 2D information
+and you want to see 3D representation (or vice versa). If the input file
+contains embedding information and both checkbuttons are switched on, then
+the behaviour of CaGe is as follows:
+<dir>
+<li> Every 2D embedding is 
+determined using <strong>schlegel</strong> without concerning
+the old embedding.
+<li> Every old 3D embedding is used to build the new 3D embedding upon. If the
+"Use old embedding"--checkbutton was not switched on, then <strong>spring</strong>
+would take a default 3D embedding to start with.
+</dir>
+The 3D embedding can be divided into four parts a,b,c and d. 
+The four related
+sliders ("Parameters for 3D re--embedding") can be used to determine how
+carefully each part will be computed. The value of b should be at least 10
+times as high as a. The value of d should not be chosen too high since
+the computation time depends linearly on <strong>d<sup><smal>2</sup></smal></strong>.
+For details see the original manual of <strong>spring</strong>.
+
+<strong>Output options:</strong> See section
+<a href="fullgen.html"><strong>fullgen</strong>
+</font></a>.
+</body>
+</html>

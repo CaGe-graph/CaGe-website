@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>CaGe -- Technical Information</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" src="select.js">
+</script>
+<script language="JavaScript" src="navigate.js">
+</script>
+</head>
+<body bgcolor="#6699FF" text="#000000" link="#333333" vlink="#666666">
+<table border="0" cellspacing="0" cellpadding="0" width="500">
+  <tr valign="top"> 
+    <td> 
+      <h1>Technical information</h1>
+      <p>If you feel 
+        inclined to take a deeper look into the CaGe, or possibly extend it, this 
+        page is for you.</p>
+      <h1>The production process:<br>
+        Generators and Embedders</h1>
+      <p>CaGe is a 
+        &quot;control center&quot; for a collection of programs that do the actual 
+        work. These external programs are our generators and embedders.</p>
+      <p><a name="pipes"></a>CaGe 
+        communicates with these programs using pipes -- the input/output mechanism 
+        best known from the UNIX world. The external programs aren't actually 
+        &quot;aware&quot; that they are working in the CaGe, they only read and 
+        write data using the three standard i/o streams known as standard input, 
+        standard output and standard error. CaGe sets these streams up and reads 
+        from or writes into them.</p>
+      <p><a name="generator"></a>A 
+        <b>Generator</b> 
+        can be any program that produces graphs on standard output, in any of 
+        the formats understood by CaGe. From a technical point of view, a generator 
+        is nothing more than such a graphs-producing program controlled via its 
+        command line, possibly supported by a Java class to define its own options 
+        window within CaGe. If you would like to use a generator program without 
+        writing Java code for the options window, you can do so via the <a href="external.html">external 
+        generator</a> button in CaGe's <a href="generators.html">first window</a>, 
+        providing a command line with all option parameters there.</p>
+      <p><a name="embedder"></a>An 
+        <b>Embedder</b> takes one graph and computes (2D or 3D) coordinates for 
+        its vertices. Like the generators, it must use the graph formats known 
+        to CaGe, and it must output the graph's vertices in the same order as 
+        they were supplied in the input. CaGe needs some additional information 
+        about an embedder: it must have methods to manipulate the embedder command 
+        line to make the embedder spend more time trying to achieve a good embedding, 
+        and to start a 2D re-embedding with a new exterior face.</p>
+      <p>After a generator 
+        has been selected and output options chosen, CaGe starts the generation 
+        program and reads graphs from it. Graphs selected for output are passed 
+        on to the appropriate embedder. (If both 2D and 3D output was chosen, 
+        embedder processes are run separately for the two dimensions.)</p>
+      <h2>Adding a Generator</h2>
+      <p>If you want 
+        to use a new generator with its own options window, you need to provide 
+        CaGe with a Java class extending <tt><b>cage.GeneratorPanel</b></tt>, 
+        a subclass of <tt><b>javax.swing.JPanel</b></tt>. 
+        CaGe will instantiate an object of this class, add it to a window, call 
+        the method <tt><b>showing</b></tt> 
+        to allow some extra preparation and then show the window. After the user 
+        has clicked &quot;Next&quot; on another panel in the same window, <tt><b>getGeneratorInfo</b></tt> 
+        is called which must return an object of type <tt><b>cage.GeneratorInfo</b></tt>, 
+        containing several items of information such as the command line that 
+        you would otherwise enter in the &quot;external generator&quot; options 
+        window.<br>
+        You need to add entries to the configuration file <tt><b>CaGe.ini</b></tt>
+        to make CaGe offer the new generator to the user. The existing entries 
+        will provide you with a template. To access other entries from the configuration 
+        file, you can use the static <tt><b>getConfigProperty</b></tt> 
+        method of the <tt><b>cage.CaGe</b></tt> class.</p>
+      <p>CaGe has 
+        little flexibility as yet with respect to the format a generator is expected 
+        to produce, even if a GeneratorPanel is provided. All generators are currently 
+        required to output one of CaGe's two input formats described below.</p>
+      <h2>Adding an Embedder</h2>
+	  <p>Adding your own embedder to CaGe is a fairly uncommon use-case in our eyes.
+	  If however you do feel the need to use a specific embedder that is not part of
+	  CaGe, then <a href="documentation/embedderguide.pdf">this guide</a> might provide you with the necessary
+	  information and tips.</p>
+
+
+      <h1><a name="formats"></a>Formats</h1>
+      <p>There are 
+        currently two graph formats that CaGe can read, so generators and embedders 
+        must use one of these for their output. CaGe will try to recognize which 
+        of these formats it is reading.</p>
+      <h2>Format headers</h2>
+      <p>CaGe's input 
+        formats have an optional header identifying the format in an unambiguous 
+        way. If there is no header in an input that CaGe is reading, the program 
+        will guess from the first byte, but false guesses are possible. A header 
+        consists of the <b>format name</b> enclosed in double angle brackets &gt;&gt;...&lt;&lt;. 
+        These brackets can also contain a comment, separated from the format name 
+        by white space. The header can be on its own line (i.e. followed by a 
+        line separator) if the format is line-oriented (which currently applies 
+        to the writegraph format, described next).</p>
+      <h2>The Writegraph format (input/output)</h2>
+      <p><i>Format names used in headers: writegraph,&nbsp;writegraph2d,&nbsp;writegraph3d</i></p>
+      <p>This format 
+        originated from Combinatorica, a Mathematica package. It is a plain-text 
+        format and easily readable for humans. There is one line for each vertex, 
+        and this line contains, separated by white space, &#149;&nbsp;the vertex 
+        number (sequentially numbered, starting with one) &#149;&nbsp;vertex coordinates, 
+        &#149;&nbsp;the numbers of all vertices adjacent to the current one. Since 
+        we deal with lists of graphs, we define a line containing just the number 
+        zero as the separator between two graphs (as zero is not a valid vertex 
+        number).</p>
+      <p>When encoding 
+        an embedded graph (with coordinates for the vertices), writegraph is the 
+        format of choice. It then contains either the 2D or 3D embedding, and 
+        the format name in the header is expected to communicate this fact. For 
+        a non-embedded graph, it is possible to include no coordinates (and use 
+        &quot;writegraph&quot; without a dimension in the header), but there is 
+        also the convention of including zero coordinates (and the format name 
+        should then specify the number of zero coordinates used for each vertex 
+        as &quot;2d&quot; or &quot;3d&quot;). One comment sometimes given in the 
+        header after the format name is &quot;planar&quot;, signifying that the 
+        order in which vertices are listed can be used to construct a planar embedding 
+        of the graph. See &quot;Planar Code&quot; for details.</p>
+      <h2>The Planar Code format (input/output)</h2>
+      <p><i>Format names used in headers: planar_code,&nbsp;embed_code</i></p>
+      <p>This is a 
+        binary format not including coordinate information. Planar code does however 
+        contain a hint for a 2D embedding as a convention. This information lies 
+        in the order that a vertex's adjacencies are listed.</p>
+      <p>A Planar Code representation of a graph starts with a number giving the total number 
+        of vertices. Then, for each vertex, follows a sequence of numbers specifiying 
+        that vertex's neighbours. This sequence must enumerate the neighbours 
+        as they appear when you go clockwise in one circle around the vertex. 
+        Going anti-clockwise is allowed as well, but the direction must be the 
+        same for all vertices of the graph. This information is actually a partial 
+        encoding of a 2D embedding of the graph, and it is used by our 2D embedder.</p>
+      <h2><a name="PDB_CML"></a>Other formats (output only): PDB and CML</h2>
+      <p>CaGe can save graphs in two other popular formats, <b>PDB</b> and <b>CML</b>. Both 
+        of these are popular in the chemistry world and &quot;rich&quot; formats, 
+        providing ways of expressing large amounts of different chemical information. 
+        By the nature of its production process, CaGe doesn't know much about 
+        the chemistry of its results, and thus only uses a small part of the CML 
+        and PDB languages. The &gt;&gt;...&lt;&lt; format headers defined above 
+        are not used with CML and PDB in order to produce compatible output.<br>
+        In PDB, CaGe uses &quot;ATOM&quot; and &quot;CONECT&quot; records to encode 
+        vertices and edges of its graphs. The CML features used by CaGe have been 
+        chosen to produce CML output that is both compact and readable by one 
+        of its viewers, <a href="jmol.html">Jmol</a>, which CaGe &quot;feeds&quot; 
+        with graphs to display via this CML format. CML's <tt><b>&lt;molecule&gt;</b></tt> 
+        tag is amended by CaGe with a <tt><b>convention=&quot;MathGraph&quot;</b></tt>
+        attribute. This instructs our &quot;tailored&quot; version of the Jmol 
+        applet to strictly adhere to the atom coordinates and bonds given in the 
+        input, rather than try to embed any atoms itself or second-guess the existence 
+        or absence of bonds. (By contrast, there is no way to get the Rasmol viewer 
+        out of its bond-guessing habit.)</p>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td align="left">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td nowrap width="500"> 
+      <table border="0" cellspacing="0%" cellpadding=0%" width="100%">
+        <tr valign="top"> 
+          <td align="right" nowrap><a href="download.html" style="text-decoration: none" onMouseOver="return setFocused (this);" onMouseOut="setPassive (this);" onClick="return setClicked (this);" class="navigation">Download<img src="Images/trans.gif" width=5 height=1 border="0" alt=" "><img src="Images/pointer-backward-passive.gif" width="6" height="11" border="0" alt="&lt;" name="download"></a></td>
+          <td nowrap width="100%" align="center">&nbsp;&nbsp;</td>
+          <td align="left" nowrap>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="3" bgcolor="#ffffff"><img src="Images/trans.gif" width="1" height="1"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td><img height="1" width="500" src="Images/trans.gif"></td>
+  </tr>
+</table>
+<script language="JavaScript"><!--
+
+contentLoaded ();
+
+// --></script>
+</body>
+</html>

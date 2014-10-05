@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <titel>hello</titel>
+  </head>
+  <body BGCOLOR="#ffffff">
+Up : <a href="./"><strong>Main</strong></a>  
+Prev : <a href="codes.html"><strong>Codes</strong></a>
+Next : <a href="download.html"><strong>Download Source Releases</strong></a>
+
+<h1 align=center> CaGe V0.3
+<HR></h1> 
+
+<h3>Internal constants</h3>
+
+In this section internal constants are discussed. The behaviour of CaGe
+depends on the values of some internal constants. Usually there is no need to
+change the values of these constants. Changing the values is done by editing
+the source program <strong>CaGe.c</strong> and then recompiling the source code
+(using the command <strong>make</strong> --- see <strong>README</strong> file). 
+This means that you
+need to have basic knowledge about the programming language <strong>C</strong>. 
+The following constants are listed at the top of the source code (called
+<strong>public definitions</strong>) or after
+the first big comment page (called <strong>internal definitions</strong>):
+<dir>
+<li><strong>ENDIAN_OUT/ENDIAN_IN:</strong>  The value depends on the machine the 
+source code is compiled on. SGI machines are known to be big endian while most
+other machines are little endian. If the definition does not fit to your
+computer, you do not need to change it if other programs which interact with
+CaGe are able to handle both little and big endian. Furthermore, you do
+not need to change it if the endian is unimportant 
+(see section 
+<a href="codes.html"><strong  >codes
+</font></strong></a>
+).
+<li><strong>MAXN:</strong>  If an input graph has more vertices than indicated by this number,
+then CaGe will do nonsense. So if you plan to read in bigger graphs, it is
+necessary to increase this number.
+<li><strong>MAXENTRIES:</strong>  This number indicates the maximum number of code entries
+for one input graph, using <strong>planar_code</strong>. For an 
+<strong>n</strong>--valent vertex 
+<strong>n+1</strong> entries are needed (the numbers of the n adjacent vertices and a zero
+at the end). If an input graph requires more entries, then CaGe will do
+nonsense. However, this will not occur if a graph with maximal MAXN vertices
+or its dual will be read from one of the four generation programs 
+<strong>fullgen</strong>, <strong>tubetype</strong>, <strong>HCgen</strong> or <strong>CPF</strong>.
+<li><strong>NL:</strong>  This is the string which is assumed to be the newline symbol in
+all ASCII--files which are read or written.
+
+</dir>
+</body>
+</html>
